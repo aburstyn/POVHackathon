@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PositionTracker.h"
 #import "MapViewController.h"
+#import "HomeViewController.h"
 
 
 @implementation AppDelegate
@@ -19,20 +20,22 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
+    self.homeViewController = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
+    
+    
+//    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+  //  self.tabBarController.viewControllers = @[homeViewController];
+    self.window.rootViewController = self.homeViewController;
+    [self.window makeKeyAndVisible];
+
+    /*
     MapViewController *viewController1 = [[MapViewController alloc] initWithNibName:nil bundle:nil];
     viewController1.view.backgroundColor = [UIColor whiteColor];
-    
-    
-    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = @[viewController1];
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
-    
     
     PositionTracker *positionTracker = [[PositionTracker alloc] init];
     positionTracker.delegate = viewController1;
     [positionTracker beginTrackingLocation];
-    
+    */
     return YES;
 }
 

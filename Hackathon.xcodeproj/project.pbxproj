@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030515D81719B3100055D3CA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515D71719B3100055D3CA /* HomeViewController.m */; };
+		030515DE1719B3D30055D3CA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515DC1719B3D30055D3CA /* LoginViewController.m */; };
+		030515DF1719B3D30055D3CA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515DD1719B3D30055D3CA /* LoginViewController.xib */; };
+		030515E31719B3E10055D3CA /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515E11719B3E10055D3CA /* SplashViewController.m */; };
+		030515E41719B3E10055D3CA /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515E21719B3E10055D3CA /* SplashViewController.xib */; };
+		030515E91719B88A0055D3CA /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515E71719B88A0055D3CA /* TakePhotoViewController.m */; };
+		030515EA1719B88A0055D3CA /* TakePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515E81719B88A0055D3CA /* TakePhotoViewController.xib */; };
 		7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6671715B0FE0004BA51 /* UIKit.framework */; };
 		7B25D66A1715B0FE0004BA51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6691715B0FE0004BA51 /* Foundation.framework */; };
 		7B25D66C1715B0FE0004BA51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D66B1715B0FE0004BA51 /* CoreGraphics.framework */; };
@@ -23,6 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030515D61719B3100055D3CA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		030515D71719B3100055D3CA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		030515DB1719B3D30055D3CA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		030515DC1719B3D30055D3CA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		030515DD1719B3D30055D3CA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		030515E01719B3E10055D3CA /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		030515E11719B3E10055D3CA /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		030515E21719B3E10055D3CA /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		030515E61719B88A0055D3CA /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
+		030515E71719B88A0055D3CA /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
+		030515E81719B88A0055D3CA /* TakePhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePhotoViewController.xib; sourceTree = "<group>"; };
 		7B25D6641715B0FE0004BA51 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25D6671715B0FE0004BA51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B25D6691715B0FE0004BA51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +78,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030515D31719B2D80055D3CA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7BB843FB17198FEA003983DA /* MapViewController.h */,
+				7BB843FC17198FEA003983DA /* MapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		030515D41719B2F00055D3CA /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				030515E01719B3E10055D3CA /* SplashViewController.h */,
+				030515E11719B3E10055D3CA /* SplashViewController.m */,
+				030515E21719B3E10055D3CA /* SplashViewController.xib */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		030515D91719B3300055D3CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				030515DB1719B3D30055D3CA /* LoginViewController.h */,
+				030515DC1719B3D30055D3CA /* LoginViewController.m */,
+				030515DD1719B3D30055D3CA /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		030515E51719B8780055D3CA /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				030515E61719B88A0055D3CA /* TakePhotoViewController.h */,
+				030515E71719B88A0055D3CA /* TakePhotoViewController.m */,
+				030515E81719B88A0055D3CA /* TakePhotoViewController.xib */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
 		7B25D65B1715B0FE0004BA51 = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +175,12 @@
 		7B25D69E1715B1C90004BA51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7BB843FB17198FEA003983DA /* MapViewController.h */,
-				7BB843FC17198FEA003983DA /* MapViewController.m */,
+				030515D61719B3100055D3CA /* HomeViewController.h */,
+				030515D71719B3100055D3CA /* HomeViewController.m */,
+				030515D41719B2F00055D3CA /* Splash */,
+				030515D91719B3300055D3CA /* Login */,
+				030515E51719B8780055D3CA /* Photo */,
+				030515D31719B2D80055D3CA /* Map */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +249,9 @@
 				7B25D67A1715B0FE0004BA51 /* Default.png in Resources */,
 				7B25D67C1715B0FE0004BA51 /* Default@2x.png in Resources */,
 				7B25D67E1715B0FE0004BA51 /* Default-568h@2x.png in Resources */,
+				030515DF1719B3D30055D3CA /* LoginViewController.xib in Resources */,
+				030515E41719B3E10055D3CA /* SplashViewController.xib in Resources */,
+				030515EA1719B88A0055D3CA /* TakePhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +266,10 @@
 				7B25D6781715B0FE0004BA51 /* AppDelegate.m in Sources */,
 				7B25D6A21715B3730004BA51 /* PositionTracker.m in Sources */,
 				7BB843FD17198FEA003983DA /* MapViewController.m in Sources */,
+				030515D81719B3100055D3CA /* HomeViewController.m in Sources */,
+				030515DE1719B3D30055D3CA /* LoginViewController.m in Sources */,
+				030515E31719B3E10055D3CA /* SplashViewController.m in Sources */,
+				030515E91719B88A0055D3CA /* TakePhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,8 +314,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
+				PROVISIONING_PROFILE = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -273,8 +341,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
+				PROVISIONING_PROFILE = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -290,8 +358,8 @@
 				GCC_PREFIX_HEADER = "Hackathon/Hackathon-Prefix.pch";
 				INFOPLIST_FILE = "Hackathon/Hackathon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
+				PROVISIONING_PROFILE = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -306,8 +374,8 @@
 				GCC_PREFIX_HEADER = "Hackathon/Hackathon-Prefix.pch";
 				INFOPLIST_FILE = "Hackathon/Hackathon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2AA64FA4-8AE6-42DC-ADB3-E85658E76A27";
+				PROVISIONING_PROFILE = "2B344DA9-0680-44A4-9FE8-F9B80E2CB9DF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "69E267C9-8BED-4A87-B460-531B6E1CE5BA";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
