@@ -35,19 +35,27 @@
 
 -(IBAction)takePhotoButtonHit
 {
-    if ([UIImagePickerController isSourceTypeAvailable:
-         UIImagePickerControllerSourceTypeCamera])
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
     {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.mediaTypes = [NSArray arrayWithObjects:
-                                  (NSString *) kUTTypeImage,
-                                  nil];
-        imagePicker.allowsEditing = NO;
-        [self presentModalViewController:imagePicker animated:YES];
-        [imagePicker release];
+        self.uip = [[UIImagePickerController alloc] init];
+        self.uip.sourceType = UIImagePickerControllerSourceTypeCamera;
+        self.uip.showsCameraControls = YES;
+        self.uip.delegate = self;
+        CGRect frame = uip.view.frame;
+        frame.origin.y += 30;
+        frame.size.height -= 30;
+        self.uip.view.frame = frame;
+        [self.view addSubview:self.uip.view];
+        
+        self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
+        self.uip.view.frame = CGRectMake(-560,-5,580,310);
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:.35];
+        self.uip.view.frame = CGRectMake(0,self.uip.view.frame.origin.y,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
+        [UIView commitAnimations];
 
+        
     }
 }
 
@@ -56,10 +64,8 @@
     NSLog(@"didFinishPickingMediaWithInfo: %@", info);
     
     self.photoImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    [self dismissModalViewControllerAnimated:YES];
-
-    CGRect frame = self.theButton.frame;
     
+    CGRect frame = self.theButton.frame;
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [nextButton setTitle:@"Next" forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +73,12 @@
     [self.theButton removeFromSuperview];
     [self.view addSubview:nextButton];
 
-    
+ 
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:.35];
+    self.uip.view.frame = CGRectMake(-580,00,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
+    [UIView commitAnimations];
+
 }
 
 -(void)nextButtonHit

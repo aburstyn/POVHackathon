@@ -15,10 +15,12 @@
 {
     UIButton *theButton;
     UIImageView *photoImageView;
+    UIImagePickerController *uip;
 }
 
 -(IBAction)takePhotoButtonHit;
 
 @property (nonatomic, retain) IBOutlet UIButton *theButton;
 @property (nonatomic, retain) IBOutlet UIImageView *photoImageView;
+@property (nonatomic, retain) UIImagePickerController *uip;
 @end

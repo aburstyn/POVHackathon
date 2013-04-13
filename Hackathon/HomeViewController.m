@@ -42,6 +42,8 @@ static HomeViewController *theSharedHomeViewController;
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    
     self.splashViewController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
     [self.view addSubview:self.splashViewController.view];
     
@@ -53,9 +55,12 @@ static HomeViewController *theSharedHomeViewController;
 
 -(void)splashViewComplete
 {
-    NSLog(@"splashViewComplete");       
+    NSLog(@"splashViewComplete");
+    
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.view addSubview:self.loginViewController.view];
+
+    [self.splashViewController.view removeFromSuperview];
 
 }
 
@@ -65,12 +70,18 @@ static HomeViewController *theSharedHomeViewController;
     
     self.takePhotoViewController = [[TakePhotoViewController alloc] initWithNibName:@"TakePhotoViewController" bundle:nil];
     [self.view addSubview:self.takePhotoViewController.view];
+    
+    [self.loginViewController.view removeFromSuperview];
 }
 
 -(void)takePhotoViewComplete
 {
     self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
     [self.view addSubview:self.mediaPlayerViewController.view];
+    
+    [self.takePhotoViewController.view removeFromSuperview];
+    
+    
 }
 
 @end

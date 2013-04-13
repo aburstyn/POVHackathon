@@ -30,19 +30,28 @@
 {
     [super viewDidLoad];
     
-    uip = [[UIImagePickerController alloc] init];
-    uip.sourceType =
+    self.uip = [[UIImagePickerController alloc] init];
+    self.uip.sourceType =
     UIImagePickerControllerSourceTypeCamera;
-    uip.showsCameraControls = NO;
-    CGRect frame = uip.view.frame;
+    self.uip.showsCameraControls = NO;
+    CGRect frame = self.uip.view.frame;
     frame.origin.y += 30;
     frame.size.height -= 30;
-    uip.view.frame = frame;
-    uip.view.alpha = .5;
-    [self.view addSubview:uip.view];
+    self.uip.view.frame = frame;
+    self.uip.view.alpha = .5;
+    [self.view addSubview:self.uip.view];
     
-    uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
-    uip.view.frame = CGRectMake(0,00,520,720);
+    self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
+    self.uip.view.frame = CGRectMake(-550,-5,700,310);
+    
+  //  [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:.35];
+    self.uip.view.frame = CGRectMake(000,self.uip.view.frame.origin.y,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
+//    [UIView commitAnimations];
+    
+    
+    
+    
     
     UIButton *playButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     playButton.frame = CGRectMake(50,50,100,50);
@@ -63,7 +72,7 @@
     [moviePlayerController play];
     
     
-    moviePlayerController.view.alpha = .25;
+    moviePlayerController.view.alpha = .85;
 }
 
 
