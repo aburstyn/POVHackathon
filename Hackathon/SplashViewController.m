@@ -36,13 +36,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+  //  self.view.frame = CGRectMake(0,0,self.view.frame.size.height, self.view.frame.size.width);
+    
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
