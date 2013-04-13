@@ -11,6 +11,7 @@
 @implementation MapPinObject
 
 @synthesize coordinate;
+@synthesize cllocation;
 @synthesize title;
 @synthesize subTitle;
 
@@ -20,6 +21,7 @@
     self.coordinate = location;
     self.title = placeName;
     self.subTitle = description;
+    self.cllocation = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
     
     return self;
 }

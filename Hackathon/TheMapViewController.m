@@ -8,7 +8,7 @@
 
 #import "TheMapViewController.h"
 #import "MapPinObject.h"
-
+#import "QuestObject.h"
 @interface TheMapViewController ()
 
 @end
@@ -44,7 +44,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"%@ %s newLocation: %@", self, __func__, newLocation);
+//    NSLog(@"%@ %s newLocation: %@", self, __func__, newLocation);
     
     [self.mapView setCenterCoordinate:newLocation.coordinate];
     if ([self.pinObjectsArray count] > 0)
@@ -59,11 +59,22 @@
         CLLocation *thePinLocation = [[CLLocation alloc] initWithLatitude:mapPinObject.coordinate.latitude longitude:mapPinObject.coordinate.longitude];
         CLLocationDistance meters = [newLocation distanceFromLocation:thePinLocation];
         
-        NSLog(@"dist: %f", meters);
-        NSLog(@" ");
+//        NSLog(@"dist: %f", meters);
+//        NSLog(@" ");
+        
+        QuestObject *questObject = [QuestObject getSharedQuestObject];
+        if (questObject == nil)
+        {
+            NSLog(@"create!");
+            NSArray *questObject = [NSArray arrayWithObjects:@"Towel", @"Blanket", @"T-shirt", @"food", nil];
+            [QuestObject createQuestObjectWithStartLocation:newLocation endLocation:mapPinObject.cllocation withQuestObjects:questObject];
+        }
+        
+        NSLog(@"questObject.questObjects: %@", questObject.questObjects);
+        
     }
     
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 2000,2000)];
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 50,50)];
     
     
 //

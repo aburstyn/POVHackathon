@@ -12,11 +12,13 @@
 @interface MapPinObject : NSObject <MKAnnotation>
 {
     CLLocationCoordinate2D coordinate;
+    CLLocation *cllocation;
     NSString *title;
     NSString *subTitle;
 }
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, retain) CLLocation *cllocation;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subTitle;
 
