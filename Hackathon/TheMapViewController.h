@@ -11,6 +11,9 @@
 @interface TheMapViewController : UIViewController
 {
     MKMapView *mapView;
+    NSMutableArray *pinObjectsArray;
+    
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) NSMutableArray *pinObjectsArray;
 @end

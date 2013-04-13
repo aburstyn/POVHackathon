@@ -25,6 +25,7 @@
 		030516041719D9530055D3CA /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030516021719D9530055D3CA /* YouViewController.xib */; };
 		030516081719D9D40055D3CA /* TheMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030516061719D9D40055D3CA /* TheMapViewController.m */; };
 		030516091719D9D40055D3CA /* TheMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030516071719D9D40055D3CA /* TheMapViewController.xib */; };
+		0305160C1719DCDD0055D3CA /* MapPinObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0305160B1719DCDD0055D3CA /* MapPinObject.m */; };
 		7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6671715B0FE0004BA51 /* UIKit.framework */; };
 		7B25D66A1715B0FE0004BA51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6691715B0FE0004BA51 /* Foundation.framework */; };
 		7B25D66C1715B0FE0004BA51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D66B1715B0FE0004BA51 /* CoreGraphics.framework */; };
@@ -66,6 +67,8 @@
 		030516051719D9D40055D3CA /* TheMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMapViewController.h; sourceTree = "<group>"; };
 		030516061719D9D40055D3CA /* TheMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMapViewController.m; sourceTree = "<group>"; };
 		030516071719D9D40055D3CA /* TheMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheMapViewController.xib; sourceTree = "<group>"; };
+		0305160A1719DCDD0055D3CA /* MapPinObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinObject.h; sourceTree = "<group>"; };
+		0305160B1719DCDD0055D3CA /* MapPinObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinObject.m; sourceTree = "<group>"; };
 		7B25D6641715B0FE0004BA51 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25D6671715B0FE0004BA51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B25D6691715B0FE0004BA51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +113,8 @@
 				030516051719D9D40055D3CA /* TheMapViewController.h */,
 				030516061719D9D40055D3CA /* TheMapViewController.m */,
 				030516071719D9D40055D3CA /* TheMapViewController.xib */,
+				0305160A1719DCDD0055D3CA /* MapPinObject.h */,
+				0305160B1719DCDD0055D3CA /* MapPinObject.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				030515FC1719D7D30055D3CA /* TabRootViewController.m in Sources */,
 				030516031719D9530055D3CA /* YouViewController.m in Sources */,
 				030516081719D9D40055D3CA /* TheMapViewController.m in Sources */,
+				0305160C1719DCDD0055D3CA /* MapPinObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
