@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
+#import "TabRootViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 {
     HomeViewController *homeViewController;
+    TabRootViewController *tabRootViewController;
 }
 
 @property (strong, nonatomic) HomeViewController *homeViewController;
+@property (strong, nonatomic) TabRootViewController *tabRootViewController;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;

@@ -1,5 +1,5 @@
 //
-//  MapViewController.h
+//  TheMapViewController.h
 //  Hackathon
 //
 //  Created by Josh Klobe on 4/13/13.
@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-
-@interface MapViewController : UIViewController
+@interface TheMapViewController : UIViewController
 {
     MKMapView *mapView;
-    
 }
-@property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @end

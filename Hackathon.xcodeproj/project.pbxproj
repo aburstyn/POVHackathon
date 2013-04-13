@@ -20,6 +20,11 @@
 		030515F41719BB7C0055D3CA /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515F21719BB7C0055D3CA /* MediaPlayerViewController.xib */; };
 		030515F61719BB8C0055D3CA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030515F51719BB8C0055D3CA /* MediaPlayer.framework */; };
 		030515F91719BBFB0055D3CA /* sample_sorenson.mov in Resources */ = {isa = PBXBuildFile; fileRef = 030515F81719BBFB0055D3CA /* sample_sorenson.mov */; };
+		030515FC1719D7D30055D3CA /* TabRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515FB1719D7D30055D3CA /* TabRootViewController.m */; };
+		030516031719D9530055D3CA /* YouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030516011719D9530055D3CA /* YouViewController.m */; };
+		030516041719D9530055D3CA /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030516021719D9530055D3CA /* YouViewController.xib */; };
+		030516081719D9D40055D3CA /* TheMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030516061719D9D40055D3CA /* TheMapViewController.m */; };
+		030516091719D9D40055D3CA /* TheMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030516071719D9D40055D3CA /* TheMapViewController.xib */; };
 		7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6671715B0FE0004BA51 /* UIKit.framework */; };
 		7B25D66A1715B0FE0004BA51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6691715B0FE0004BA51 /* Foundation.framework */; };
 		7B25D66C1715B0FE0004BA51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D66B1715B0FE0004BA51 /* CoreGraphics.framework */; };
@@ -32,7 +37,6 @@
 		7B25D6A21715B3730004BA51 /* PositionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D6A11715B3730004BA51 /* PositionTracker.m */; };
 		7B25D6A41715B3820004BA51 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6A31715B3820004BA51 /* CoreLocation.framework */; };
 		7BB843FA17198FAE003983DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB843F917198FAE003983DA /* MapKit.framework */; };
-		7BB843FD17198FEA003983DA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB843FC17198FEA003983DA /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,14 @@
 		030515F21719BB7C0055D3CA /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
 		030515F51719BB8C0055D3CA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		030515F81719BBFB0055D3CA /* sample_sorenson.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample_sorenson.mov; sourceTree = "<group>"; };
+		030515FA1719D7D20055D3CA /* TabRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabRootViewController.h; sourceTree = "<group>"; };
+		030515FB1719D7D30055D3CA /* TabRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabRootViewController.m; sourceTree = "<group>"; };
+		030516001719D9530055D3CA /* YouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouViewController.h; sourceTree = "<group>"; };
+		030516011719D9530055D3CA /* YouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouViewController.m; sourceTree = "<group>"; };
+		030516021719D9530055D3CA /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouViewController.xib; sourceTree = "<group>"; };
+		030516051719D9D40055D3CA /* TheMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMapViewController.h; sourceTree = "<group>"; };
+		030516061719D9D40055D3CA /* TheMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMapViewController.m; sourceTree = "<group>"; };
+		030516071719D9D40055D3CA /* TheMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheMapViewController.xib; sourceTree = "<group>"; };
 		7B25D6641715B0FE0004BA51 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25D6671715B0FE0004BA51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B25D6691715B0FE0004BA51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,8 +83,6 @@
 		7B25D6A11715B3730004BA51 /* PositionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionTracker.m; sourceTree = "<group>"; };
 		7B25D6A31715B3820004BA51 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7BB843F917198FAE003983DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		7BB843FB17198FEA003983DA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		7BB843FC17198FEA003983DA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +107,9 @@
 		030515D31719B2D80055D3CA /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				7BB843FB17198FEA003983DA /* MapViewController.h */,
-				7BB843FC17198FEA003983DA /* MapViewController.m */,
+				030516051719D9D40055D3CA /* TheMapViewController.h */,
+				030516061719D9D40055D3CA /* TheMapViewController.m */,
+				030516071719D9D40055D3CA /* TheMapViewController.xib */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -149,6 +160,39 @@
 				030515F81719BBFB0055D3CA /* sample_sorenson.mov */,
 			);
 			name = Media;
+			sourceTree = "<group>";
+		};
+		030515FD1719D7D80055D3CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				030515D61719B3100055D3CA /* HomeViewController.h */,
+				030515D71719B3100055D3CA /* HomeViewController.m */,
+				030515D41719B2F00055D3CA /* Splash */,
+				030515D91719B3300055D3CA /* Login */,
+				030515E51719B8780055D3CA /* Photo */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		030515FE1719D7FC0055D3CA /* TabHome */ = {
+			isa = PBXGroup;
+			children = (
+				030515FF1719D9460055D3CA /* You */,
+				030515D31719B2D80055D3CA /* Map */,
+				030515FA1719D7D20055D3CA /* TabRootViewController.h */,
+				030515FB1719D7D30055D3CA /* TabRootViewController.m */,
+			);
+			name = TabHome;
+			sourceTree = "<group>";
+		};
+		030515FF1719D9460055D3CA /* You */ = {
+			isa = PBXGroup;
+			children = (
+				030516001719D9530055D3CA /* YouViewController.h */,
+				030516011719D9530055D3CA /* YouViewController.m */,
+				030516021719D9530055D3CA /* YouViewController.xib */,
+			);
+			name = You;
 			sourceTree = "<group>";
 		};
 		7B25D65B1715B0FE0004BA51 = {
@@ -213,13 +257,9 @@
 		7B25D69E1715B1C90004BA51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				030515D61719B3100055D3CA /* HomeViewController.h */,
-				030515D71719B3100055D3CA /* HomeViewController.m */,
-				030515D41719B2F00055D3CA /* Splash */,
-				030515D91719B3300055D3CA /* Login */,
-				030515E51719B8780055D3CA /* Photo */,
+				030515FE1719D7FC0055D3CA /* TabHome */,
 				030515EF1719BB680055D3CA /* MediaPlayer */,
-				030515D31719B2D80055D3CA /* Map */,
+				030515FD1719D7D80055D3CA /* Home */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -293,6 +333,8 @@
 				030515EA1719B88A0055D3CA /* TakePhotoViewController.xib in Resources */,
 				030515F41719BB7C0055D3CA /* MediaPlayerViewController.xib in Resources */,
 				030515F91719BBFB0055D3CA /* sample_sorenson.mov in Resources */,
+				030516041719D9530055D3CA /* YouViewController.xib in Resources */,
+				030516091719D9D40055D3CA /* TheMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,12 +348,14 @@
 				7B25D6741715B0FE0004BA51 /* main.m in Sources */,
 				7B25D6781715B0FE0004BA51 /* AppDelegate.m in Sources */,
 				7B25D6A21715B3730004BA51 /* PositionTracker.m in Sources */,
-				7BB843FD17198FEA003983DA /* MapViewController.m in Sources */,
 				030515D81719B3100055D3CA /* HomeViewController.m in Sources */,
 				030515DE1719B3D30055D3CA /* LoginViewController.m in Sources */,
 				030515E31719B3E10055D3CA /* SplashViewController.m in Sources */,
 				030515E91719B88A0055D3CA /* TakePhotoViewController.m in Sources */,
 				030515F31719BB7C0055D3CA /* MediaPlayerViewController.m in Sources */,
+				030515FC1719D7D30055D3CA /* TabRootViewController.m in Sources */,
+				030516031719D9530055D3CA /* YouViewController.m in Sources */,
+				030516081719D9D40055D3CA /* TheMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
