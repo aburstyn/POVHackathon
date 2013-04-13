@@ -42,6 +42,12 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
+    
+
+    NSLog(@"self.loginFirstView: %@", self.loginFirstView);
+    [self.view addSubview:self.loginFirstView];
+    
+//    UIImageView *
     // Do any additional setup after loading the view from its nib.
 }
 

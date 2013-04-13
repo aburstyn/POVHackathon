@@ -36,10 +36,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-  //  self.view.frame = CGRectMake(0,0,self.view.frame.size.height, self.view.frame.size.width);
+ 
+    AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [del.homeViewController splashViewComplete];
     
-    // Do any additional setup after loading the view from its nib.
+    [NSTimer scheduledTimerWithTimeInterval:4 target:del.homeViewController selector:@selector(splashViewComplete) userInfo:nil repeats:NO];
+    
 }
 
 

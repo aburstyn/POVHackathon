@@ -33,8 +33,6 @@
     
     self.mapView.showsUserLocation = YES;
     
-    
-    
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(40.70443484470314, -73.99009639404154);
     MapPinObject *mapPinObject = [[MapPinObject alloc] initWithCoordinates:coord placeName:@"Start" description:@"Start Description"];
     [self.mapView addAnnotation:mapPinObject];

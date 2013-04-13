@@ -44,12 +44,18 @@ static HomeViewController *theSharedHomeViewController;
     
     self.view.backgroundColor = [UIColor darkGrayColor];
     
-    self.splashViewController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
-    [self.view addSubview:self.splashViewController.view];
+    
     
 //    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
 //    [self.view addSubview:self.mediaPlayerViewController.view];
 
+//    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+//    [self.view addSubview:self.loginViewController.view];
+
+    
+        
+    self.splashViewController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
+    [self.view addSubview:self.splashViewController.view];
 }
 
 
@@ -59,9 +65,20 @@ static HomeViewController *theSharedHomeViewController;
     
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.view addSubview:self.loginViewController.view];
+    self.loginViewController.view.alpha = 0;
+    
 
-    [self.splashViewController.view removeFromSuperview];
+//    if ([self.splashViewController.view superview] != nil)
+//        [self.splashViewController.view removeFromSuperview];
 
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:.25];
+//    [UIView setAnimationDelegate:self];
+//    [UIView setAnimationDidStopSelector:@selector(tagTextAnimationDone)];
+    self.loginViewController.view.alpha = 1;
+    [UIView commitAnimations];
+
+    
 }
 
 -(void)loginViewComplete

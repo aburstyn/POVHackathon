@@ -27,6 +27,8 @@
 		030516091719D9D40055D3CA /* TheMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030516071719D9D40055D3CA /* TheMapViewController.xib */; };
 		0305160C1719DCDD0055D3CA /* MapPinObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0305160B1719DCDD0055D3CA /* MapPinObject.m */; };
 		030516101719E7070055D3CA /* QuestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0305160F1719E7070055D3CA /* QuestObject.m */; };
+		030516141719EE840055D3CA /* signpainterhousebrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 030516131719EE840055D3CA /* signpainterhousebrush.ttf */; };
+		0305161B1719F1190055D3CA /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0305161A1719F1190055D3CA /* splash.jpg */; };
 		7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6671715B0FE0004BA51 /* UIKit.framework */; };
 		7B25D66A1715B0FE0004BA51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6691715B0FE0004BA51 /* Foundation.framework */; };
 		7B25D66C1715B0FE0004BA51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D66B1715B0FE0004BA51 /* CoreGraphics.framework */; };
@@ -72,6 +74,8 @@
 		0305160B1719DCDD0055D3CA /* MapPinObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinObject.m; sourceTree = "<group>"; };
 		0305160E1719E7070055D3CA /* QuestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestObject.h; sourceTree = "<group>"; };
 		0305160F1719E7070055D3CA /* QuestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestObject.m; sourceTree = "<group>"; };
+		030516131719EE840055D3CA /* signpainterhousebrush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = signpainterhousebrush.ttf; sourceTree = "<group>"; };
+		0305161A1719F1190055D3CA /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		7B25D6641715B0FE0004BA51 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25D6671715B0FE0004BA51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B25D6691715B0FE0004BA51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,6 +216,30 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		030516121719EE790055D3CA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				030516131719EE840055D3CA /* signpainterhousebrush.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		030516151719F0370055D3CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				030516161719F03C0055D3CA /* Login */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		030516161719F03C0055D3CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0305161A1719F1190055D3CA /* splash.jpg */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		7B25D65B1715B0FE0004BA51 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +288,8 @@
 		7B25D66E1715B0FE0004BA51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				030516151719F0370055D3CA /* Images */,
+				030516121719EE790055D3CA /* Fonts */,
 				030515F71719BBED0055D3CA /* Media */,
 				7B25D66F1715B0FE0004BA51 /* Hackathon-Info.plist */,
 				7B25D6701715B0FE0004BA51 /* InfoPlist.strings */,
@@ -275,8 +305,8 @@
 		7B25D69E1715B1C90004BA51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				030515FE1719D7FC0055D3CA /* TabHome */,
 				030515EF1719BB680055D3CA /* MediaPlayer */,
+				030515FE1719D7FC0055D3CA /* TabHome */,
 				030515FD1719D7D80055D3CA /* Home */,
 			);
 			name = ViewControllers;
@@ -353,6 +383,8 @@
 				030515F91719BBFB0055D3CA /* sample_sorenson.mov in Resources */,
 				030516041719D9530055D3CA /* YouViewController.xib in Resources */,
 				030516091719D9D40055D3CA /* TheMapViewController.xib in Resources */,
+				030516141719EE840055D3CA /* signpainterhousebrush.ttf in Resources */,
+				0305161B1719F1190055D3CA /* splash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
