@@ -10,7 +10,7 @@
 
 @implementation PositionTracker
 
-@synthesize locationManager;
+@synthesize locationManager, delegate;
 
 -(void)beginTrackingLocation
 {
@@ -39,7 +39,11 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
 
-    NSLog(@"%@ %s newLocation: %@", self, __func__, newLocation);
+    if (delegate != nil)
+    {
+        [delegate locationManager:manager didUpdateToLocation:newLocation fromLocation:oldLocation];
+    }
+//    NSLog(@"%@ %s newLocation: %@", self, __func__, newLocation);
 }
 
 

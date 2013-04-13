@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "PositionTracker.h"
+#import "MapViewController.h"
+
 
 @implementation AppDelegate
 
@@ -17,7 +19,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
-    UIViewController *viewController1 = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    MapViewController *viewController1 = [[MapViewController alloc] initWithNibName:nil bundle:nil];
     viewController1.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -28,6 +30,7 @@
     
     
     PositionTracker *positionTracker = [[PositionTracker alloc] init];
+    positionTracker.delegate = viewController1;
     [positionTracker beginTrackingLocation];
     
     return YES;

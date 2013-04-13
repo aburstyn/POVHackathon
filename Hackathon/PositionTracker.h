@@ -12,9 +12,11 @@
 @interface PositionTracker : NSObject <CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
+    id delegate;
 }
 
 -(void)beginTrackingLocation;
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) id delegate;
 @end
