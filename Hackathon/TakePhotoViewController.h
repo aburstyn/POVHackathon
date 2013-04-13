@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/UTCoreTypes.h>
 
-@interface TakePhotoViewController : UIViewController
+
+
+@interface TakePhotoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
-    
+    UIButton *theButton;
+    UIImageView *photoImageView;
 }
 
 -(IBAction)takePhotoButtonHit;
+
+@property (nonatomic, retain) IBOutlet UIButton *theButton;
+@property (nonatomic, retain) IBOutlet UIImageView *photoImageView;
 @end

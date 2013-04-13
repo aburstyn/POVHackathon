@@ -18,7 +18,8 @@ static HomeViewController *theSharedHomeViewController;
 
 
 @synthesize splashViewController, loginViewController;
-@synthesize takePhotoViewController;
+@synthesize takePhotoViewController, mediaPlayerViewController;
+
 
 +(HomeViewController *)sharedHomeViewController
 {
@@ -43,17 +44,16 @@ static HomeViewController *theSharedHomeViewController;
     
     self.splashViewController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
     [self.view addSubview:self.splashViewController.view];
-	// Do any additional setup after loading the view.
+    
+//    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
+//    [self.view addSubview:self.mediaPlayerViewController.view];
+
 }
 
 
 -(void)splashViewComplete
 {
-    NSLog(@"splashViewComplete");
-   
-    [self.splashViewController.view removeFromSuperview];
-    
-    
+    NSLog(@"splashViewComplete");       
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.view addSubview:self.loginViewController.view];
 
@@ -65,6 +65,12 @@ static HomeViewController *theSharedHomeViewController;
     
     self.takePhotoViewController = [[TakePhotoViewController alloc] initWithNibName:@"TakePhotoViewController" bundle:nil];
     [self.view addSubview:self.takePhotoViewController.view];
+}
+
+-(void)takePhotoViewComplete
+{
+    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
+    [self.view addSubview:self.mediaPlayerViewController.view];
 }
 
 @end

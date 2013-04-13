@@ -14,6 +14,12 @@
 		030515E41719B3E10055D3CA /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515E21719B3E10055D3CA /* SplashViewController.xib */; };
 		030515E91719B88A0055D3CA /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515E71719B88A0055D3CA /* TakePhotoViewController.m */; };
 		030515EA1719B88A0055D3CA /* TakePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515E81719B88A0055D3CA /* TakePhotoViewController.xib */; };
+		030515EC1719B9F20055D3CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030515EB1719B9F10055D3CA /* AVFoundation.framework */; };
+		030515EE1719BA1D0055D3CA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030515ED1719BA1D0055D3CA /* MobileCoreServices.framework */; };
+		030515F31719BB7C0055D3CA /* MediaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030515F11719BB7C0055D3CA /* MediaPlayerViewController.m */; };
+		030515F41719BB7C0055D3CA /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030515F21719BB7C0055D3CA /* MediaPlayerViewController.xib */; };
+		030515F61719BB8C0055D3CA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030515F51719BB8C0055D3CA /* MediaPlayer.framework */; };
+		030515F91719BBFB0055D3CA /* sample_sorenson.mov in Resources */ = {isa = PBXBuildFile; fileRef = 030515F81719BBFB0055D3CA /* sample_sorenson.mov */; };
 		7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6671715B0FE0004BA51 /* UIKit.framework */; };
 		7B25D66A1715B0FE0004BA51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6691715B0FE0004BA51 /* Foundation.framework */; };
 		7B25D66C1715B0FE0004BA51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D66B1715B0FE0004BA51 /* CoreGraphics.framework */; };
@@ -41,6 +47,13 @@
 		030515E61719B88A0055D3CA /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
 		030515E71719B88A0055D3CA /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
 		030515E81719B88A0055D3CA /* TakePhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePhotoViewController.xib; sourceTree = "<group>"; };
+		030515EB1719B9F10055D3CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		030515ED1719BA1D0055D3CA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		030515F01719BB7C0055D3CA /* MediaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerViewController.h; sourceTree = "<group>"; };
+		030515F11719BB7C0055D3CA /* MediaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerViewController.m; sourceTree = "<group>"; };
+		030515F21719BB7C0055D3CA /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
+		030515F51719BB8C0055D3CA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		030515F81719BBFB0055D3CA /* sample_sorenson.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample_sorenson.mov; sourceTree = "<group>"; };
 		7B25D6641715B0FE0004BA51 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25D6671715B0FE0004BA51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B25D6691715B0FE0004BA51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030515F61719BB8C0055D3CA /* MediaPlayer.framework in Frameworks */,
+				030515EE1719BA1D0055D3CA /* MobileCoreServices.framework in Frameworks */,
+				030515EC1719B9F20055D3CA /* AVFoundation.framework in Frameworks */,
 				7BB843FA17198FAE003983DA /* MapKit.framework in Frameworks */,
 				7B25D6A41715B3820004BA51 /* CoreLocation.framework in Frameworks */,
 				7B25D6681715B0FE0004BA51 /* UIKit.framework in Frameworks */,
@@ -117,9 +133,30 @@
 			name = Photo;
 			sourceTree = "<group>";
 		};
+		030515EF1719BB680055D3CA /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				030515F01719BB7C0055D3CA /* MediaPlayerViewController.h */,
+				030515F11719BB7C0055D3CA /* MediaPlayerViewController.m */,
+				030515F21719BB7C0055D3CA /* MediaPlayerViewController.xib */,
+			);
+			name = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		030515F71719BBED0055D3CA /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				030515F81719BBFB0055D3CA /* sample_sorenson.mov */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
 		7B25D65B1715B0FE0004BA51 = {
 			isa = PBXGroup;
 			children = (
+				030515F51719BB8C0055D3CA /* MediaPlayer.framework */,
+				030515ED1719BA1D0055D3CA /* MobileCoreServices.framework */,
+				030515EB1719B9F10055D3CA /* AVFoundation.framework */,
 				7BB843F917198FAE003983DA /* MapKit.framework */,
 				7B25D6A31715B3820004BA51 /* CoreLocation.framework */,
 				7B25D66D1715B0FE0004BA51 /* Hackathon */,
@@ -161,6 +198,7 @@
 		7B25D66E1715B0FE0004BA51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				030515F71719BBED0055D3CA /* Media */,
 				7B25D66F1715B0FE0004BA51 /* Hackathon-Info.plist */,
 				7B25D6701715B0FE0004BA51 /* InfoPlist.strings */,
 				7B25D6731715B0FE0004BA51 /* main.m */,
@@ -180,6 +218,7 @@
 				030515D41719B2F00055D3CA /* Splash */,
 				030515D91719B3300055D3CA /* Login */,
 				030515E51719B8780055D3CA /* Photo */,
+				030515EF1719BB680055D3CA /* MediaPlayer */,
 				030515D31719B2D80055D3CA /* Map */,
 			);
 			name = ViewControllers;
@@ -252,6 +291,8 @@
 				030515DF1719B3D30055D3CA /* LoginViewController.xib in Resources */,
 				030515E41719B3E10055D3CA /* SplashViewController.xib in Resources */,
 				030515EA1719B88A0055D3CA /* TakePhotoViewController.xib in Resources */,
+				030515F41719BB7C0055D3CA /* MediaPlayerViewController.xib in Resources */,
+				030515F91719BBFB0055D3CA /* sample_sorenson.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +311,7 @@
 				030515DE1719B3D30055D3CA /* LoginViewController.m in Sources */,
 				030515E31719B3E10055D3CA /* SplashViewController.m in Sources */,
 				030515E91719B88A0055D3CA /* TakePhotoViewController.m in Sources */,
+				030515F31719BB7C0055D3CA /* MediaPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
