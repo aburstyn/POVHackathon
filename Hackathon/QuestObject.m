@@ -38,4 +38,11 @@ static QuestObject *theSharedQuestObject;
     [self.receivedQuestObjects addObject:obj];
 }
 
+//Brooklyn Bridge Park
+//Latitude: 40.70443484470314
+//Longitude: -73.99009639404154
+
+
+
+
 @end

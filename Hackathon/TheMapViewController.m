@@ -33,12 +33,18 @@
     
     self.mapView.showsUserLocation = YES;
     
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(40.70275426, -73.98000111);
     
-    MapPinObject *mapPinObject = [[MapPinObject alloc] initWithCoordinates:coord placeName:@"placeOne" description:@"descone"];
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(40.70443484470314, -73.99009639404154);
+    MapPinObject *mapPinObject = [[MapPinObject alloc] initWithCoordinates:coord placeName:@"Start" description:@"Start Description"];
     [self.mapView addAnnotation:mapPinObject];
     
     [self.pinObjectsArray addObject:mapPinObject];
+    coord = CLLocationCoordinate2DMake(40.702183926515936, -73.98713473237491);
+    mapPinObject = [[MapPinObject alloc] initWithCoordinates:coord placeName:@"End" description:@"End Description"];
+    [self.mapView addAnnotation:mapPinObject];
+
+    
     
 }
 
@@ -55,7 +61,6 @@
 //        CLLocationCoordinate2D pointA = CLLocationCoordinate2DMake(mapPinObject.coordinate.latitude, mapPinObject.coordinate.longitude);
 //        CLLocationCoordinate2D pointB = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
         
-    
         CLLocation *thePinLocation = [[CLLocation alloc] initWithLatitude:mapPinObject.coordinate.latitude longitude:mapPinObject.coordinate.longitude];
         CLLocationDistance meters = [newLocation distanceFromLocation:thePinLocation];
         
@@ -74,7 +79,7 @@
         
     }
     
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 50,50)];
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 1000,1000)];
     
     
 //

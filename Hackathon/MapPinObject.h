@@ -13,14 +13,14 @@
 {
     CLLocationCoordinate2D coordinate;
     CLLocation *cllocation;
-    NSString *title;
-    NSString *subTitle;
+    NSString *titleString;
+    NSString *subTitleString;
 }
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) CLLocation *cllocation;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *subTitle;
+@property (nonatomic, retain) NSString *titleString;
+@property (nonatomic, retain) NSString *subTitleString;
 
 - (id)initWithCoordinates:(CLLocationCoordinate2D)location placeName:(NSString *)placeName description:(NSString *)description;
 

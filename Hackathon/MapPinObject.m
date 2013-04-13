@@ -12,26 +12,26 @@
 
 @synthesize coordinate;
 @synthesize cllocation;
-@synthesize title;
-@synthesize subTitle;
+@synthesize titleString;
+@synthesize subTitleString;
 
 - (id)initWithCoordinates:(CLLocationCoordinate2D)location placeName:(NSString *)placeName description:(NSString *)description
 {
     self = [super init];
     self.coordinate = location;
-    self.title = placeName;
-    self.subTitle = description;
+    self.titleString = placeName;
+    self.subTitleString = description;
     self.cllocation = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
     
     return self;
 }
 
 - (NSString *) title {
-    return @"Thats the title";
+    return self.titleString;
 }
 
 - (NSString *) subtitle {
-    return @"Thats the sub";
+    return self.subTitleString;
 }
 
 
