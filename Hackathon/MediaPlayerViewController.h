@@ -17,6 +17,8 @@
     UIImageView *playerImageView;
     
     int currentCount;
+    
+    UIImage *screengrabImage;
 }
 
 -(IBAction)playMovie:(id)sender;
@@ -27,4 +29,6 @@
 @property (nonatomic, retain) UIImageView *playerImageView;
 
 @property (nonatomic, assign) int currentCount;
+
+@property (nonatomic, retain) UIImage *screengrabImage;
 @end

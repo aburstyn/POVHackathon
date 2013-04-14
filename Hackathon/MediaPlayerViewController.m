@@ -18,8 +18,9 @@
 
 @implementation MediaPlayerViewController
 
-@synthesize uip, player, playerImageView, currentCount;
+@synthesize uip, player, playerImageView, currentCount, screengrabImage;
 
+static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,6 +92,15 @@
 {
     
     self.currentCount++;
+    
+    if (self.currentCount == 100)
+    {
+        CGImageRef screen = UIGetScreenImage();
+        UIImage* image = [UIImage imageWithCGImage:screen];
+        CGImageRelease(screen);
+        
+        self.screengrabImage = image;
+    }
     if (self.currentCount <= 832)
     {
         NSString *numberString = nil;
@@ -138,11 +148,36 @@
         vulerabilityViewController.view.alpha = 1;
         [UIView commitAnimations];
         
-        
-        
-        
+        self.screengrabImage = [self rotateWithSource:self.screengrabImage withOrientation:UIImageOrientationRight];
+//        vulerabilityViewController.screenGrabImageView.image = self.screengrabImage;
+/*        vulerabilityViewController.screenGrabImageView.transform = CGAffineTransformMakeRotation(-3.141592/2);
+        vulerabilityViewController.screenGrabImageView.frame = CGRectMake(0,0,30,30);
+        */
     }
 }
+
+-(UIImage*) rotateWithSource:(UIImage *)src withOrientation:(UIImageOrientation)orientation
+{
+    
+    UIGraphicsBeginImageContext(src.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if (orientation == UIImageOrientationRight) {
+        CGContextRotateCTM (context, radians(90));
+    } else if (orientation == UIImageOrientationLeft) {
+        CGContextRotateCTM (context, radians(-90));
+    } else if (orientation == UIImageOrientationDown) {
+        // NOTHING
+    } else if (orientation == UIImageOrientationUp) {
+        CGContextRotateCTM (context, radians(90));
+    }
+    
+    [src drawAtPoint:CGPointMake(0, 0)];
+    
+    return UIGraphicsGetImageFromCurrentImageContext();
+}
+
 
 -(void)doneMovie:(id)sender
 {

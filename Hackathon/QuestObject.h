@@ -14,7 +14,8 @@
     CLLocation *endPosition;
     NSMutableArray *questObjects;
     NSMutableArray *receivedQuestObjects;
-    
+ 
+    NSDictionary *fileNamesDictionary;
 }
 
 +(QuestObject *)getSharedQuestObject;
@@ -25,5 +26,5 @@
 @property (nonatomic, retain) CLLocation *endPosition;
 @property (nonatomic, retain) NSMutableArray *questObjects;
 @property (nonatomic, retain) NSMutableArray *receivedQuestObjects;
-
+@property (nonatomic, retain) NSDictionary *fileNamesDictionary;
 @end

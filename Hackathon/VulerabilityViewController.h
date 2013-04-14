@@ -16,6 +16,9 @@
     
     UIImageView *indexBarView;
     
+    UIImage *screenGrabImage;
+    
+    UIImageView *screenGrabImageView;
 }
 
 -(void)touchMovedWithXPos:(float)xPos;
@@ -25,5 +28,9 @@
 @property (nonatomic, retain) IBOutlet IndexTouchView *indexTouchView;
 
 @property (nonatomic, retain) UIImageView *indexBarView;
+
+@property (nonatomic, retain) UIImage *screenGrabImage;
+
+@property (nonatomic, retain) IBOutlet UIImageView *screenGrabImageView;
 
 @end

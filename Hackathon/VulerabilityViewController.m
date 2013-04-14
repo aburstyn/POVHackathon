@@ -15,7 +15,7 @@
 
 @implementation VulerabilityViewController
 
-@synthesize howLabel, indexTouchView;
+@synthesize howLabel, indexTouchView, indexBarView, screenGrabImage, screenGrabImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +44,8 @@
     self.indexBarView = [[UIImageView alloc] initWithFrame:CGRectMake(self.indexTouchView.frame.origin.x, self.indexTouchView.frame.origin.y - 9, 10, self.indexTouchView.frame.size.height + 12)];
     self.indexBarView.image = sliderTabImage;
     [self.view addSubview:self.indexBarView];
+    
+    
     
 }
 

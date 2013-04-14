@@ -31,6 +31,7 @@
 {
     AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [del.homeViewController splashViewComplete];
+    
 }
 
 - (void)viewDidLoad
