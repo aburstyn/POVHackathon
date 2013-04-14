@@ -47,7 +47,7 @@ static HomeViewController *theSharedHomeViewController;
     
     
 //    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
-//    [self.view addSubview:self.mediaPlayerViewController.view];
+  //  [self.view addSubview:self.mediaPlayerViewController.view];
 
 //    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 //    [self.view addSubview:self.loginViewController.view];
@@ -63,6 +63,10 @@ static HomeViewController *theSharedHomeViewController;
 {
     NSLog(@"splashViewComplete");
     
+    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
+    [self.view addSubview:self.mediaPlayerViewController.view];
+
+    /*
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.view addSubview:self.loginViewController.view];
     self.loginViewController.view.alpha = 0;
@@ -78,7 +82,7 @@ static HomeViewController *theSharedHomeViewController;
     self.loginViewController.view.alpha = 1;
     [UIView commitAnimations];
 
-    
+    */
 }
 
 -(void)loginViewComplete

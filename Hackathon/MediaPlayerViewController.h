@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-
+#import <AVFoundation/AVFoundation.h>
 
 @interface MediaPlayerViewController : UIViewController
 {
     UIImagePickerController *uip;
+    AVPlayer *player;
+    UIImageView *playerImageView;
     
+    int currentCount;
 }
 
 -(IBAction)playMovie:(id)sender;
 
 
 @property (nonatomic, retain) UIImagePickerController *uip;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, retain) UIImageView *playerImageView;
+
+@property (nonatomic, assign) int currentCount;
 @end
