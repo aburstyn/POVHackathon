@@ -27,8 +27,10 @@
 @synthesize progressBackgroundImageView;
 @synthesize progressSlider;
 
+@synthesize holdDistance;
 
-static float holdDistance = 18; // 18
+static float sentinalValue = 1800000; // 18
+static float desiredRange = 18;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,9 +41,18 @@ static float holdDistance = 18; // 18
     return self;
 }
 
+
+-(void)simulateButtonHit
+{
+    self.holdDistance = sentinalValue;
+}
+
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    self.holdDistance = desiredRange;
     
     self.mapView.showsUserLocation = YES;
     
@@ -70,9 +81,12 @@ static float holdDistance = 18; // 18
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"newLocation: %@", newLocation);
+    
+    
+    NSLog(@"self.holdDistance: %f", self.holdDistance);
     NSLog(@"self.hasStartedTrip: %d", self.hasStartedTrip);
     NSLog(@"self.hasTripEnded: %d", self.hasTripEnded);
+            
     if (!self.hasTripEnded)
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate];
@@ -176,7 +190,7 @@ static float holdDistance = 18; // 18
                     }
                 }
                 
-                if (distanceInmeters < holdDistance && self.hasPresentedFirstConnect)
+                if (distanceInmeters < holdDistance + 25)
                 {
                     
 
@@ -203,6 +217,8 @@ static float holdDistance = 18; // 18
     }
 
     
+    if (self.holdDistance == sentinalValue)
+        self.holdDistance = desiredRange;
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc

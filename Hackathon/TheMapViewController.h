@@ -31,9 +31,14 @@
 
     UIImageView *progressBackgroundImageView;
     UISlider *progressSlider;
+    
+    
+    float holdDistance;
+
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
+-(IBAction)simulateButtonHit;
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) NSMutableArray *pinObjectsArray;
@@ -51,4 +56,6 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *progressBackgroundImageView;
 @property (nonatomic, retain) IBOutlet UISlider *progressSlider;
+
+@property (nonatomic, assign) float holdDistance;
 @end
