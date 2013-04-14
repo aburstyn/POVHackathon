@@ -35,7 +35,9 @@ static QuestObject *theSharedQuestObject;
 
 +(NSArray *)getObjs
 {
-    NSArray *questObjectArray =
+
+
+    NSArray *objsArray = 
     [NSArray arrayWithObjects:@"Pillow",
      @"Sheets",
      @"Towel & washcloth",
@@ -69,59 +71,19 @@ static QuestObject *theSharedQuestObject;
      @"Flatware",
      @"Lamp",
      
-     @"Pillow",
-     @"Sheets",
-     @"Towel & washcloth",
-     @"Comforter",
-     @"Set of cups",
-     @"Pots & pans",
-     @"Dishes",
-     @"Alarm clock",
-     @"Broom",
-     @"Trash can",
-     @"Can opener",
-     @"Spatula/Big spoon/Measuring cup (ie, cooking utensils)",
-     @"Mattress",
-     @"Coffee mug",
-     @"Flatware",
-     @"Lamp",
-     
-     @"Pillow",
-     @"Sheets",
-     @"Towel & washcloth",
-     @"Comforter",
-     @"Set of cups",
-     @"Pots & pans",
-     @"Dishes",
-     @"Alarm clock",
-     @"Broom",
-     @"Trash can",
-     @"Can opener",
-     @"Spatula/Big spoon/Measuring cup (ie, cooking utensils)",
-     @"Mattress",
-     @"Coffee mug",
-     @"Flatware",
-     @"Lamp",
-     
-     @"Pillow",
-     @"Sheets",
-     @"Towel & washcloth",
-     @"Comforter",
-     @"Set of cups",
-     @"Pots & pans",
-     @"Dishes",
-     @"Alarm clock",
-     @"Broom",
-     @"Trash can",
-     @"Can opener",
-     @"Spatula/Big spoon/Measuring cup (ie, cooking utensils)",
-     @"Mattress",
-     @"Coffee mug",
-     @"Flatware",
-     @"Lamp",
-     
      nil];
-    return questObjectArray;
+    
+    NSMutableArray *ar = [NSMutableArray arrayWithCapacity:0];
+    
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    [ar addObjectsFromArray:objsArray];
+    
+    return ar;
 }
 -(void)addReceivedQuestObject:(id)obj
 {

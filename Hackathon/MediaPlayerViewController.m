@@ -34,6 +34,11 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    UIView *blackView = [[UIView alloc] initWithFrame:CGRectMake(0,0,550,400)];
+    [self.view addSubview:blackView];
+    
     self.uip = [[UIImagePickerController alloc] init];
     self.uip.sourceType =
     UIImagePickerControllerSourceTypeCamera;
@@ -46,7 +51,7 @@
     [self.view addSubview:self.uip.view];
     
     self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
-    self.uip.view.frame = CGRectMake(-550,-5,700,310);
+    self.uip.view.frame = CGRectMake(-550,4,700,310);
     self.uip.view.frame = CGRectMake(000,self.uip.view.frame.origin.y,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
     
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(playMovie:) userInfo:nil repeats:NO];
@@ -105,6 +110,11 @@
     else
     {
         [theTimer invalidate];
+        
+        UIView *blackView = [[UIView alloc] initWithFrame:CGRectMake(-200, -200, 800,800)];
+        blackView.backgroundColor = [UIColor blackColor];
+        [self.view addSubview:blackView];
+        
         
         NSString *imageFilename = [NSString stringWithFormat:@"Viper1Alpha_520X320 %@.png", @"832"];
         

@@ -31,7 +31,7 @@
     self.positionTracker = [[PositionTracker alloc] init];
     [self.positionTracker beginTrackingLocation];
         
-    [self transitionToRootTabBar];
+//    [self transitionToRootTabBar];
     return YES;
 }
 
@@ -40,6 +40,8 @@
     self.tabRootViewController = [[TabRootViewController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = self.tabRootViewController;    
     self.positionTracker.delegate = self.tabRootViewController.mapViewController;
+    
+    [self.tabRootViewController setSelectedIndex:1];
 }
 
 

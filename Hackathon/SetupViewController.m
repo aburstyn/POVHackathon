@@ -15,7 +15,7 @@
 
 @implementation SetupViewController
 
-@synthesize uip, photoImageView;
+@synthesize uip, backgroundImageView, textLabel, photoImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,7 +44,7 @@
         [self.view addSubview:self.uip.view];
         
         self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
-        self.uip.view.frame = CGRectMake(-560,-5,580,310);
+        self.uip.view.frame = CGRectMake(+560,-5,580,310);
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:.35];
@@ -61,6 +61,11 @@
 {
     [super viewDidLoad];
     self.view.frame = CGRectMake(0,0,520,320);
+    
+    self.textLabel.backgroundColor = [UIColor clearColor];
+    self.textLabel.textColor = [UIColor whiteColor];
+    self.textLabel.font = [UIFont fontWithName:@"SignPainter" size:20];
+    self.textLabel.text = @"Tap to Take a Photo of yourself";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -69,26 +74,36 @@
 {
     NSLog(@"didFinishPickingMediaWithInfo: %@", info);
     
+    self.textLabel.text = @"Tap to retake photo";
+    
     self.photoImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 
 
 
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [nextButton setTitle:@"Next" forState:UIControlStateNormal];
+    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [nextButton setImage:[UIImage imageNamed:@"use_button.png"] forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
-    nextButton.frame = CGRectMake(0,0,100,50);
+    nextButton.frame = CGRectMake(420,240,100,50);
     [self.view addSubview:nextButton];
 
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.35];
-    self.uip.view.frame = CGRectMake(-580,00,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
+    self.uip.view.frame = CGRectMake(+580,00,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(pickerExitedOut)];
     [UIView commitAnimations];
     
     [UserProfileObject getSharedProfileObject].userImage = self.photoImageView.image;
     
 }
 
+-(void)pickerExitedOut
+{
+    [self.uip.view removeFromSuperview];
+    [self.uip release];
+    self.uip = nil;
+}
 -(void)nextButtonHit
 {
     

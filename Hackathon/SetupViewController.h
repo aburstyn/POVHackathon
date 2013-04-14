@@ -10,14 +10,21 @@
 
 @interface SetupViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
+    UIImageView *backgroundImageView;
+    
     UIImagePickerController *uip;
     
     UIImageView *photoImageView;
+    UILabel *textLabel;
+    
 }
 
 -(IBAction)takePhotoButtonHit;
 
 @property (nonatomic, retain) UIImagePickerController *uip;
 
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
+
 @property (nonatomic, retain) IBOutlet UIImageView *photoImageView;
+@property (nonatomic, retain) IBOutlet UILabel *textLabel;
 @end
