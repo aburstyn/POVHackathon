@@ -155,35 +155,10 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
                                                        orientation: UIImageOrientationLeft];
         
         vulerabilityViewController.screenGrabImageView.image = self.screengrabImage;
-/*        vulerabilityViewController.screenGrabImageView.transform = CGAffineTransformMakeRotation(-3.141592/2);
-        vulerabilityViewController.screenGrabImageView.frame = CGRectMake(0,0,30,30);
-        */
     }
     
     self.currentCount++;
     
-}
-
--(UIImage*) rotateWithSource:(UIImage *)src withOrientation:(UIImageOrientation)orientation
-{
-    
-    UIGraphicsBeginImageContext(src.size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    if (orientation == UIImageOrientationRight) {
-        CGContextRotateCTM (context, radians(90));
-    } else if (orientation == UIImageOrientationLeft) {
-        CGContextRotateCTM (context, radians(-90));
-    } else if (orientation == UIImageOrientationDown) {
-        // NOTHING
-    } else if (orientation == UIImageOrientationUp) {
-        CGContextRotateCTM (context, radians(90));
-    }
-    
-    [src drawAtPoint:CGPointMake(0, 0)];
-    
-    return UIGraphicsGetImageFromCurrentImageContext();
 }
 
 

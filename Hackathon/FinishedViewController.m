@@ -23,7 +23,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -32,7 +31,6 @@
 {
     [super viewDidLoad];
     self.view.frame = CGRectMake(0,0,self.view.frame.size.width, 320);
-    // Do any additional setup after loading the view from its nib.
 }
 
 -(IBAction)donateButtonHit

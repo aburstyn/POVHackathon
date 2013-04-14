@@ -33,10 +33,10 @@
 
 -(void)initializeWithObjectString:(NSString *)theObjectString
 {
+    theObjectString = @"Pillow";
     self.headerLabel.text = [NSString stringWithFormat:@"YOU FOUND THE %@", theObjectString];
     
-    NSString *filename = [[QuestObject getFilenamesDictionary] objectForKey:theObjectString];
-    NSLog(@"filename: %@", filename);
+    NSString *filename = @"item_pillow.png";
     self.objectImageView.image = [UIImage imageNamed:filename];
     
 }

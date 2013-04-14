@@ -162,6 +162,8 @@ static float desiredRange = 18;
             {
                                 
                 QuestObject *questObject = [QuestObject getSharedQuestObject];
+                questObject = [QuestObject getSharedQuestObject];
+                questObject = [QuestObject getSharedQuestObject];
                 MapPinObject *endLocationPinObject = [self.pinObjectsArray objectAtIndex:1];
                 CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:endLocationPinObject.coordinate.latitude longitude:endLocationPinObject.coordinate.longitude];
                 
@@ -169,15 +171,37 @@ static float desiredRange = 18;
                 
                 if (self.tripDistance == nil)
                     self.tripDistance = [NSNumber numberWithFloat:distanceInmeters];
+               
+                NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:0];
+                NSLog(@"theQuestObjectString");
+                if (![questObject.receivedQuestObjects containsObject:theQuestObjectString])
+                {
+                    [questObject.receivedQuestObjects addObject:theQuestObjectString];
+                    NSLog(@"questObject.receivedQuestObjects: %@", questObject.receivedQuestObjects);
+                    FoundItemViewController *foundItemViewController = [[FoundItemViewController alloc] initWithNibName:@"FoundItemViewController" bundle:nil];
+                    foundItemViewController.delegate = self;
+                    foundItemViewController.view.backgroundColor = [UIColor clearColor];
+                    [foundItemViewController initializeWithObjectString:theQuestObjectString];
+                    foundItemViewController.view.alpha = 0;
+                    [self.view addSubview:foundItemViewController.view];
+                    
+                    [UIView beginAnimations:nil context:nil];
+                    [UIView setAnimationDuration:1];
+                    foundItemViewController.view.alpha = 1;
+                    [UIView commitAnimations];
+                    
+                }
                 
+                /*
                 
                 int indexPosition = [[NSNumber numberWithFloat:roundf(distanceInmeters / [self.iterationDistance floatValue]) / [questObject.questObjects count]] intValue];
                 
                 self.distanceLabel.text = [NSString stringWithFormat:@"%f", distanceInmeters];
-                                
+                if (distanceInmeters < 400)
+                {
                 if (indexPosition % 4 == 0)
                 {
-                    NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:indexPosition];
+                    NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:0];
                     if (![questObject.receivedQuestObjects containsObject:theQuestObjectString])
                     {
                         [questObject.receivedQuestObjects addObject:theQuestObjectString];
@@ -196,7 +220,9 @@ static float desiredRange = 18;
                         
                     }
                 }
-                
+                 
+                }
+                 */
                 if (distanceInmeters < holdDistance + 25)
                 {
                     
@@ -222,7 +248,6 @@ static float desiredRange = 18;
 
 -(void)journeyBegan
 {
-    NSLog(@"journeyBegan");
     [self.startInterstatialImageView removeFromSuperview];
     [self.startButton removeFromSuperview];
     
@@ -247,18 +272,15 @@ static float desiredRange = 18;
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapview viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    NSLog(@"%@ %s !!!!: %@", self, __func__);
-    
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
-    NSLog(@"asdfasdfasdfasdf");
     annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"locationscren.png"]];
     if(annotationView)
         return annotationView;
     else
-    {NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    {
         MKAnnotationView *annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation
                                                                          reuseIdentifier:AnnotationIdentifier] autorelease];
         annotationView.canShowCallout = YES;

@@ -48,17 +48,7 @@ static HomeViewController *theSharedHomeViewController;
     self.view.backgroundColor = [UIColor darkGrayColor];
     
     self.view.frame = CGRectMake(0,0,520,320);
-    
-    
-//    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
-  //  [self.view addSubview:self.mediaPlayerViewController.view];
-
-//    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-//    [self.view addSubview:self.loginViewController.view];
-
-//    self.takePhotoViewController = [[TakePhotoViewController alloc] initWithNibName:@"TakePhotoViewController" bundle:nil];
-//    [self.view addSubview:self.takePhotoViewController.view];
-    
+        
     self.setupViewController = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
     [self.view addSubview:self.setupViewController.view];
     
@@ -76,31 +66,7 @@ static HomeViewController *theSharedHomeViewController;
     self.splashViewController.view.alpha = 0;
     [UIView commitAnimations];
 
-    
-    
-    
-    
-//self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
-  //  [self.view addSubview:self.mediaPlayerViewController.view];
-
-    /*
-    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self.view addSubview:self.loginViewController.view];
-    self.loginViewController.view.alpha = 0;
-    
-
-//    if ([self.splashViewController.view superview] != nil)
-//        [self.splashViewController.view removeFromSuperview];
-
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:.25];
-//    [UIView setAnimationDelegate:self];
-//    [UIView setAnimationDidStopSelector:@selector(tagTextAnimationDone)];
-    self.loginViewController.view.alpha = 1;
-    [UIView commitAnimations];
-
-    */
-}
+    }
 
 -(void)loginViewComplete
 {
