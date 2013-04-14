@@ -59,6 +59,13 @@
     [playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playButton];
     
+    /*
+    UIButton *done = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    done.frame = CGRectMake(50,50,100,50);
+    [done setTitle:@"Done" forState:UIControlStateNormal];
+    [done addTarget:self action:@selector(doneMovie:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:done];
+    */
 }
 
 -(IBAction)playMovie:(id)sender
@@ -73,6 +80,11 @@
     
     
     moviePlayerController.view.alpha = .85;
+}
+
+-(void)doneMovie
+{
+    
 }
 
 

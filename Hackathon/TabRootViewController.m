@@ -7,7 +7,7 @@
 //
 
 #import "TabRootViewController.h"
-
+#import "MediaPlayerViewController.h"
 @interface TabRootViewController ()
 
 @end
@@ -24,7 +24,7 @@
 
         self.youViewController = [[YouViewController alloc] initWithNibName:@"YouViewController" bundle:nil];
         self.mapViewController = [[TheMapViewController alloc] initWithNibName:@"TheMapViewController" bundle:nil];
-        
+        self.mapViewController.theTabRootViewController = self;
         self.viewControllers = @[youViewController, mapViewController];
     }
     return self;
@@ -36,6 +36,12 @@
 	// Do any additional setup after loading the view.
 }
 
+
+-(void)presentMediaPlayer
+{
+    MediaPlayerViewController *mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
+    [self.view addSubview:mediaPlayerViewController.view];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

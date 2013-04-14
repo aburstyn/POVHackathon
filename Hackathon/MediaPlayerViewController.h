@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 
+
 @interface MediaPlayerViewController : UIViewController
 {
-    UIImagePickerController *uip;    
+    UIImagePickerController *uip;
+    
 }
 
 -(IBAction)playMovie:(id)sender;

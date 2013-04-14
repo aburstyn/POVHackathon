@@ -30,6 +30,8 @@
 
 -(IBAction)photoButtonHit;
 
+-(IBAction)secondViewNextButtonHit;
+
 @property (nonatomic, retain) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordTextField;
 

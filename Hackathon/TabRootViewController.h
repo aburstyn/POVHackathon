@@ -16,6 +16,8 @@
     TheMapViewController *mapViewController;
 }
 
+-(void)presentMediaPlayer;
+
 @property (nonatomic, retain) YouViewController *youViewController;
 @property (nonatomic, retain) TheMapViewController *mapViewController;
 @end
