@@ -77,6 +77,13 @@
     
     self.currentCount = 0;
     
+    if (self.playerImageView != nil)
+    {
+        [self.playerImageView removeFromSuperview];
+        [self.playerImageView release];
+        self.playerImageView = nil;
+        
+    }
     self.playerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:self.playerImageView];
     
@@ -103,83 +110,31 @@
             numberString = [NSString stringWithFormat:@"%d", self.currentCount];
         
         NSString *imageFilename = [NSString stringWithFormat:@"Viper1Alpha_520X320 %@.png", numberString];
-        self.playerImageView.image = [UIImage imageNamed:imageFilename];
+        
+        UIImage *theImage = [UIImage imageNamed:imageFilename];
+        self.playerImageView.image = theImage;
+        [theImage release];
     }
     else
     {
         [theTimer invalidate];
-        [self.playerImageView removeFromSuperview];
+//        [self.playerImageView removeFromSuperview];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:.35];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(imageViewDidFade)];
+        self.playerImageView.alpha = 0;
+        [UIView commitAnimations];
+        
     }
 }
 
--(void)doneMovie
+-(void)imageViewDidFade
 {
-    
-}
-
-
--(IBAction)playMovie2:(id)sender
-{
-    //    NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"Viper1Alpha_520X320" ofType:@"mov"];
-    NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"First Response" ofType:@"mov"];
-    
-    /*
-     NSURL    *fileURL    =   [NSURL fileURLWithPath:filepath];
-     MPMoviePlayerController *moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:fileURL];
-     moviePlayerController.view.frame = CGRectMake(100,100,200,200);
-     [self.view addSubview:moviePlayerController.view];
-     moviePlayerController.fullscreen = YES;
-     [moviePlayerController play];
-     */
-    
-    
-    //    NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"Viper1Alpha_520X320" ofType:@"mov"];
-    
-    UIView *theView = [[UIView alloc] initWithFrame:CGRectMake(200,1,200,200)];
-    theView.alpha = .45;
-    theView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:theView];
-    
-    
-    NSURL    *fileURL    =   [NSURL fileURLWithPath:filepath];
-    AVPlayerItem *playerItem = [[AVPlayerItem playerItemWithURL:fileURL] retain];
-    
-    NSLog(@"playerItem: %@", playerItem);
-    NSLog(@"playerItem.duration: %f", CMTimeGetSeconds([playerItem duration]));
-    self.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-    
-    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    [theView.layer addSublayer:playerLayer];
-    playerLayer.frame = CGRectMake(0,0, theView.frame.size.width, theView.frame.size.height);
-    [self.player play];
-    
-    NSLog(@"playerLayer.frame: %@", NSStringFromCGRect(playerLayer.frame));
-    NSLog(@"self.view.layer: %@", self.view.layer);
-    /*
-     AVPlayerLayer *avPlayerLayer = [[AVPlayerLayer playerLayerWithPlayer:player] retain];
-     avPlayerLayer.frame = CGRectMake(0,0,100,100);
-     [self.view.layer addSublayer:avPlayerLayer];
-     [self.view addSubview:newView];
-     [player play];
-     
-     
-     
-     //    moviePlayerController.view.alpha = .85;
-     
-     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
-     
-     */
-}
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.playerImageView removeFromSuperview];
+    [self.playerImageView release];
+    self.playerImageView = nil;
 }
 
 @end
