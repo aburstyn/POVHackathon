@@ -121,6 +121,7 @@
         VulerabilityViewController *vulerabilityViewController = [[VulerabilityViewController alloc] initWithNibName:@"VulerabilityViewController" bundle:nil];
         vulerabilityViewController.view.alpha = 0;
         [self.view addSubview:vulerabilityViewController.view];
+        vulerabilityViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:1.5];

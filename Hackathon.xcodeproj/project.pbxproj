@@ -888,6 +888,9 @@
 		7BB14914171A776200EECC30 /* FoundItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14912171A776200EECC30 /* FoundItemViewController.xib */; };
 		7BB14916171A779600EECC30 /* found_item_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14915171A779600EECC30 /* found_item_background@2x.png */; };
 		7BB14918171A797300EECC30 /* item_clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14917171A797300EECC30 /* item_clock@2x.png */; };
+		7BB1491B171AD58100EECC30 /* gotobridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14919171AD58100EECC30 /* gotobridge@2x.png */; };
+		7BB1491C171AD58100EECC30 /* gotopark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB1491A171AD58100EECC30 /* gotopark@2x.png */; };
+		7BB1491E171AD61000EECC30 /* progress_bar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB1491D171AD61000EECC30 /* progress_bar_background@2x.png */; };
 		7BB843FA17198FAE003983DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB843F917198FAE003983DA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -1792,6 +1795,9 @@
 		7BB14912171A776200EECC30 /* FoundItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundItemViewController.xib; sourceTree = "<group>"; };
 		7BB14915171A779600EECC30 /* found_item_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_item_background@2x.png"; sourceTree = "<group>"; };
 		7BB14917171A797300EECC30 /* item_clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_clock@2x.png"; sourceTree = "<group>"; };
+		7BB14919171AD58100EECC30 /* gotobridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gotobridge@2x.png"; sourceTree = "<group>"; };
+		7BB1491A171AD58100EECC30 /* gotopark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gotopark@2x.png"; sourceTree = "<group>"; };
+		7BB1491D171AD61000EECC30 /* progress_bar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress_bar_background@2x.png"; sourceTree = "<group>"; };
 		7BB843F917198FAE003983DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1930,6 +1936,9 @@
 		030516151719F0370055D3CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7BB1491D171AD61000EECC30 /* progress_bar_background@2x.png */,
+				7BB14919171AD58100EECC30 /* gotobridge@2x.png */,
+				7BB1491A171AD58100EECC30 /* gotopark@2x.png */,
 				7BB14917171A797300EECC30 /* item_clock@2x.png */,
 				7BB14915171A779600EECC30 /* found_item_background@2x.png */,
 				7BB14908171A75C700EECC30 /* finished_background@2x.png */,
@@ -3813,6 +3822,9 @@
 				7BB14914171A776200EECC30 /* FoundItemViewController.xib in Resources */,
 				7BB14916171A779600EECC30 /* found_item_background@2x.png in Resources */,
 				7BB14918171A797300EECC30 /* item_clock@2x.png in Resources */,
+				7BB1491B171AD58100EECC30 /* gotobridge@2x.png in Resources */,
+				7BB1491C171AD58100EECC30 /* gotopark@2x.png in Resources */,
+				7BB1491E171AD61000EECC30 /* progress_bar_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

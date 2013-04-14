@@ -22,8 +22,13 @@
 @synthesize hasStartedTrip;
 @synthesize hasTripEnded;
 @synthesize hasPresentedFirstConnect;
+@synthesize goToOverlayImageView;
 
-static float holdDistance = 41251280; // 18
+@synthesize progressBackgroundImageView;
+@synthesize progressSlider;
+
+
+static float holdDistance = 18; // 18
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +56,16 @@ static float holdDistance = 41251280; // 18
     [self.pinObjectsArray addObject:mapPinObject];
     
     
+    self.progressBackgroundImageView.frame = CGRectMake(self.progressBackgroundImageView.frame.origin.x, self.progressBackgroundImageView.frame.origin.y + 60, self.progressBackgroundImageView.frame.size.width, self.progressBackgroundImageView.frame.size.height);
+    self.progressSlider.frame = CGRectMake(self.progressSlider.frame.origin.x, self.progressSlider.frame.origin.y + 60, self.progressSlider.frame.size.width, self.progressSlider.frame.size.height);
+    
+    self.progressSlider.enabled = NO;
+    [self.progressSlider setValue:0];
+    
+    [self.progressSlider setThumbImage:[[[UIImage alloc] init] autorelease] forState:UIControlStateNormal];
+    [self.progressSlider setMinimumTrackTintColor:[UIColor redColor]];
+    [self.progressSlider setMaximumTrackTintColor:[UIColor clearColor]];
+    NSLog(@"slider.subviews: %@", [self.progressSlider subviews]);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -65,6 +80,11 @@ static float holdDistance = 41251280; // 18
         {
             if (!self.hasStartedTrip)
             {
+                
+                UIImage *goToParkImage = [UIImage imageNamed:@"gotopark.png"];
+                if (self.goToOverlayImageView.image != goToParkImage)
+                    self.goToOverlayImageView.image = goToParkImage;
+                    
                 MapPinObject *mapPinObject = [self.pinObjectsArray objectAtIndex:0];
                 
                 QuestObject *questObject = [QuestObject getSharedQuestObject];
@@ -76,16 +96,17 @@ static float holdDistance = 41251280; // 18
                 
                 
                 CLLocation *startLocation = [[CLLocation alloc] initWithLatitude:startLocationPinObject.coordinate.latitude longitude:startLocationPinObject.coordinate.longitude];
-                
                 CLLocation *thePinLocation = [[CLLocation alloc] initWithLatitude:mapPinObject.coordinate.latitude longitude:mapPinObject.coordinate.longitude];
                 CLLocationDistance distanceInmeters = [newLocation distanceFromLocation:thePinLocation];
                 
                 distanceInmeters = [startLocation distanceFromLocation:newLocation];
-                self.tripDistance = [NSNumber numberWithFloat:distanceInmeters];
+                if (self.tripDistance == nil)
+                    self.tripDistance = [NSNumber numberWithFloat:distanceInmeters];
                 
                 self.distanceLabel.text = [NSString stringWithFormat:@"%f", distanceInmeters];
                 
                 NSLog(@"distance to start: %f", distanceInmeters);
+                NSLog(@"self.tripDistance: %@", self.tripDistance);
                 NSLog(@" ");
                 
                 if (distanceInmeters < holdDistance)
@@ -100,14 +121,24 @@ static float holdDistance = 41251280; // 18
                     
                     [alert show];
                     [alert release];
+                    
+                    self.tripDistance = nil;
+                    
                 }
                 
                 self.iterationDistance = [NSNumber numberWithFloat:distanceInmeters / [questObject.questObjects count]];
-                //                NSLog(@"distanceInmeters / [questObject.questObjects count]: %f", distanceInmeters / [questObject.questObjects count]);
+                
+                float pct = ([self.tripDistance floatValue] - distanceInmeters) / [self.tripDistance floatValue];
+                [self.progressSlider setValue:pct];
                 
             }
             else
             {
+                
+                UIImage *goToBridgeImage = [UIImage imageNamed:@"gotobridge.png"];
+                if (self.goToOverlayImageView.image != goToBridgeImage)
+                    self.goToOverlayImageView.image = goToBridgeImage;
+
                 
                 QuestObject *questObject = [QuestObject getSharedQuestObject];
                 MapPinObject *endLocationPinObject = [self.pinObjectsArray objectAtIndex:1];
@@ -115,13 +146,14 @@ static float holdDistance = 41251280; // 18
                 
                 CLLocationDistance distanceInmeters = [newLocation distanceFromLocation:endLocation];
                 
+                if (self.tripDistance == nil)
+                    self.tripDistance = [NSNumber numberWithFloat:distanceInmeters];
+                
+                
                 int indexPosition = [[NSNumber numberWithFloat:roundf(distanceInmeters / [self.iterationDistance floatValue]) / [questObject.questObjects count]] intValue];
                 
                 self.distanceLabel.text = [NSString stringWithFormat:@"%f", distanceInmeters];
-                
-                if (!self.hasPresentedFirstConnect)
-                    indexPosition = 4;
-                
+                                
                 if (indexPosition % 4 == 0)
                 {
                     NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:indexPosition];
@@ -141,26 +173,13 @@ static float holdDistance = 41251280; // 18
                         foundItemViewController.view.alpha = 1;
                         [UIView commitAnimations];
                         
-                        
-                        /*                    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Object Found"
-                         message:[NSString stringWithFormat:@"You've Found %@", theQuestObjectString]
-                         delegate:nil
-                         cancelButtonTitle:@"Store It!"
-                         otherButtonTitles:nil];
-                         
-                         [alert show];
-                         [alert release];
-                         
-                         */
-                        
-                        
                     }
-                    
                 }
+                
                 if (distanceInmeters < holdDistance && self.hasPresentedFirstConnect)
                 {
                     
-                    
+
                     UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Journey Completed"
                                                                      message:@"!"
                                                                     delegate:self
@@ -172,23 +191,17 @@ static float holdDistance = 41251280; // 18
                     self.hasTripEnded = YES;
                 }
                 
+                float pct = ([self.tripDistance floatValue] - distanceInmeters) / [self.tripDistance floatValue];
+                [self.progressSlider setValue:pct];
+
+                
                 
             }
-            
-            
-            
         }
         
-        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 1000,1000)];
-        
-        
+        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude), 1000,1000)];                
     }
-    
-    //        CLLocationDegrees latDelta =  fabs(newLocation.coordinate.latitude - mapPinObject.coordinate.latitude);
-    //        CLLocationDegrees lonDelta =  fabs(newLocation.coordinate.longitude - mapPinObject.coordinate.longitude);
-    //        CLLocationCoordinate2D pointA = CLLocationCoordinate2DMake(mapPinObject.coordinate.latitude, mapPinObject.coordinate.longitude);
-    //        CLLocationCoordinate2D pointB = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-    
+
     
 }
 

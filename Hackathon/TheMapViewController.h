@@ -27,6 +27,10 @@
     
     UILabel *distanceLabel;
     
+    UIImageView *goToOverlayImageView;
+
+    UIImageView *progressBackgroundImageView;
+    UISlider *progressSlider;
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
@@ -42,4 +46,9 @@
 @property (nonatomic, retain) TabRootViewController *theTabRootViewController;
 
 @property (nonatomic, retain) IBOutlet UILabel *distanceLabel;
+
+@property (nonatomic, retain) IBOutlet UIImageView *goToOverlayImageView;
+
+@property (nonatomic, retain) IBOutlet UIImageView *progressBackgroundImageView;
+@property (nonatomic, retain) IBOutlet UISlider *progressSlider;
 @end
