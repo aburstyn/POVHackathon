@@ -41,7 +41,7 @@
     AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    [del.homeViewController splashViewComplete];
     
-    [NSTimer scheduledTimerWithTimeInterval:2 target:del.homeViewController selector:@selector(splashViewComplete) userInfo:nil repeats:NO];
+//    [NSTimer scheduledTimerWithTimeInterval:2 target:del.homeViewController selector:@selector(splashViewComplete) userInfo:nil repeats:NO];
     
 }
 
