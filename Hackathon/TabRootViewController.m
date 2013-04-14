@@ -53,16 +53,16 @@
 {
     self.view.backgroundColor = [UIColor blackColor];
     
-    self.alignImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10,0,550, 270)];
-    self.alignImageView.image = [UIImage imageNamed:@"found_character.png"];
+    self.alignImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10,8,550, 270)];
+    self.alignImageView.image = [UIImage imageNamed:@"found_character_chet.png"];
     self.alignImageView.alpha = 0;
     [self.view addSubview:self.alignImageView];
     
         
-    self.doneButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
-    self.doneButton.frame = CGRectMake(100,100,100,50);
+    self.doneButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    self.doneButton.frame = alignImageView.frame;
     [self.doneButton addTarget:self action:@selector(presentMediaPlayer) forControlEvents:UIControlEventTouchUpInside];
-    [self.doneButton setTitle:@"done" forState:UIControlStateNormal];
+//    [self.doneButton setTitle:@"done" forState:UIControlStateNormal];
     [self.view addSubview:self.doneButton];
     self.doneButton.alpha = 0;
     

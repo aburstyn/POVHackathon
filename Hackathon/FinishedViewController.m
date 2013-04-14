@@ -14,6 +14,11 @@
 
 @implementation FinishedViewController
 
+@synthesize theImageView;
+
+@synthesize  imageViewOne;
+@synthesize  imageViewTwo;
+@synthesize  imageViewThree;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +37,11 @@
 
 -(IBAction)donateButtonHit
 {
+    [self.imageViewOne removeFromSuperview];
+    [self.imageViewTwo removeFromSuperview];
+    [self.imageViewThree removeFromSuperview];
+    
+    self.theImageView.image = [UIImage imageNamed:@"finished_location.png"];
     NSLog(@"donateButtonHit");
 }
 

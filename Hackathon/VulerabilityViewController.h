@@ -19,6 +19,8 @@
     UIImage *screenGrabImage;
     
     UIImageView *screenGrabImageView;
+    
+    UITextView *theTextView;
 }
 
 -(void)touchMovedWithXPos:(float)xPos;
@@ -33,4 +35,5 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *screenGrabImageView;
 
+@property (nonatomic, retain) IBOutlet UITextView *theTextView;
 @end

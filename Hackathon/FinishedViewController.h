@@ -10,9 +10,20 @@
 
 @interface FinishedViewController : UIViewController
 {
+    UIImageView *theImageView;
     
+    UIImageView *imageViewOne;
+    UIImageView *imageViewTwo;
+    UIImageView *imageViewThree;
 }
 
 -(IBAction)donateButtonHit;
 -(IBAction)volunteerButtonHit;
+
+@property (nonatomic, retain) IBOutlet UIImageView *theImageView;
+
+@property (nonatomic, retain) IBOutlet UIImageView *imageViewOne;
+@property (nonatomic, retain) IBOutlet UIImageView *imageViewTwo;
+@property (nonatomic, retain) IBOutlet UIImageView *imageViewThree;
+
 @end

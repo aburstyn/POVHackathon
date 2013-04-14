@@ -18,6 +18,8 @@
     NSDictionary *fileNamesDictionary;
 }
 
++(NSDictionary *)getFilenamesDictionary;
+
 +(QuestObject *)getSharedQuestObject;
 +(void)createQuestObjectWithStartLocation:(CLLocation *)theStartLocation endLocation:(CLLocation *)theEndLocation;
 -(void)addReceivedQuestObject:(id)obj;

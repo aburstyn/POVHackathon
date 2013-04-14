@@ -200,15 +200,7 @@ static float desiredRange = 18;
                 if (distanceInmeters < holdDistance + 25)
                 {
                     
-
-                    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Journey Completed"
-                                                                     message:@"!"
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"Ok"
-                                                           otherButtonTitles:nil];
-                    
-                    [alert show];
-                    [alert release];
+                    [self.theTabRootViewController journeyCompleted];                    
                     self.hasTripEnded = YES;
                 }
                 

@@ -15,7 +15,7 @@
 
 @implementation VulerabilityViewController
 
-@synthesize howLabel, indexTouchView, indexBarView, screenGrabImage, screenGrabImageView;
+@synthesize howLabel, indexTouchView, indexBarView, screenGrabImage, screenGrabImageView, theTextView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +33,7 @@
     self.view.frame = CGRectMake(0,0,self.view.frame.size.width, 330);
     
     self.howLabel.numberOfLines = 0;
-    self.howLabel.text = @"HOW VULNERABLE IS VIPER?";
+    self.howLabel.text = @"HOW VULNERABLE IS CHET?";
     self.howLabel.font = [UIFont fontWithName:@"SignPainter" size:25];
     
 
@@ -46,7 +46,31 @@
     [self.view addSubview:self.indexBarView];
     
     
+    self.indexBarView.frame = CGRectMake(self.indexBarView.frame.origin.x + 18, self.indexBarView.frame.origin.y, self.indexBarView.frame.size.width, self.indexBarView.frame.size.height);
     
+    self.theTextView.delegate = self;
+    self.theTextView.font = [UIFont fontWithName:@"SignPainter" size:15];
+}
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text
+{
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        [textView resignFirstResponder];
+        // Return FALSE so that the final '\n' character doesn't get added
+        return NO;
+    }
+    // For any other character return TRUE so that the text gets added to the view
+    return YES;
+}
+
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [self.theTextView resignFirstResponder];
+    return NO;
 }
 
 -(void)touchMovedWithXPos:(float)xPos

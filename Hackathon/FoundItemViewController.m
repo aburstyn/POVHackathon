@@ -7,7 +7,7 @@
 //
 
 #import "FoundItemViewController.h"
-
+#import "QuestObject.h"
 @interface FoundItemViewController ()
 
 @end
@@ -34,7 +34,10 @@
 -(void)initializeWithObjectString:(NSString *)theObjectString
 {
     self.headerLabel.text = [NSString stringWithFormat:@"YOU FOUND THE %@", theObjectString];
-    self.objectImageView.image = [UIImage imageNamed:@"item_clock.png"];
+    
+    NSString *filename = [[QuestObject getFilenamesDictionary] objectForKey:theObjectString];
+    NSLog(@"filename: %@", filename);
+    self.objectImageView.image = [UIImage imageNamed:filename];
     
 }
 
