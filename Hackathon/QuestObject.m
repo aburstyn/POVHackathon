@@ -23,7 +23,7 @@ static QuestObject *theSharedQuestObject;
 }
 
 
-+(void)createQuestObjectWithStartLocation:(CLLocation *)theStartLocation endLocation:(CLLocation *)theEndLocation withQuestObjects:(NSArray *)theQuestObjects
++(void)createQuestObjectWithStartLocation:(CLLocation *)theStartLocation endLocation:(CLLocation *)theEndLocation
 {
     theSharedQuestObject = [[[QuestObject alloc] init] retain];
     
@@ -35,7 +35,7 @@ static QuestObject *theSharedQuestObject;
 
 +(NSArray *)getObjs
 {
-    NSArray *questObjectArray =// [NSArray arrayWithObjects:@"Towel", @"Blanket", @"T-shirt", @"food", nil];
+    NSArray *questObjectArray =
     [NSArray arrayWithObjects:@"Pillow",
      @"Sheets",
      @"Towel & washcloth",

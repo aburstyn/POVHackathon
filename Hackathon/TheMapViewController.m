@@ -10,6 +10,7 @@
 #import "MapPinObject.h"
 #import "QuestObject.h"
 #import "TabRootViewController.h"
+#import "FoundItemViewController.h"
 @interface TheMapViewController ()
 
 @end
@@ -18,7 +19,11 @@
 
 @synthesize mapView, pinObjectsArray, tripDistance, theTabRootViewController, distanceLabel;
 
-static float holdDistance = 18;
+@synthesize hasStartedTrip;
+@synthesize hasTripEnded;
+@synthesize hasPresentedFirstConnect;
+
+static float holdDistance = 41251280; // 18
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,20 +69,13 @@ static float holdDistance = 18;
                 
                 QuestObject *questObject = [QuestObject getSharedQuestObject];
                 if (questObject == nil)
-                {                    
-
-                    [QuestObject createQuestObjectWithStartLocation:newLocation endLocation:mapPinObject.cllocation withQuestObjects:questObject];
-                }
-                
+                    [QuestObject createQuestObjectWithStartLocation:newLocation endLocation:mapPinObject.cllocation];
                 questObject = [QuestObject getSharedQuestObject];
                 
-
-                
                 MapPinObject *startLocationPinObject = [self.pinObjectsArray objectAtIndex:0];
-                MapPinObject *endLocationPinObject = [self.pinObjectsArray objectAtIndex:1];
+                
                 
                 CLLocation *startLocation = [[CLLocation alloc] initWithLatitude:startLocationPinObject.coordinate.latitude longitude:startLocationPinObject.coordinate.longitude];
-                CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:endLocationPinObject.coordinate.latitude longitude:endLocationPinObject.coordinate.longitude];
                 
                 CLLocation *thePinLocation = [[CLLocation alloc] initWithLatitude:mapPinObject.coordinate.latitude longitude:mapPinObject.coordinate.longitude];
                 CLLocationDistance distanceInmeters = [newLocation distanceFromLocation:thePinLocation];
@@ -105,7 +103,7 @@ static float holdDistance = 18;
                 }
                 
                 self.iterationDistance = [NSNumber numberWithFloat:distanceInmeters / [questObject.questObjects count]];
-//                NSLog(@"distanceInmeters / [questObject.questObjects count]: %f", distanceInmeters / [questObject.questObjects count]);
+                //                NSLog(@"distanceInmeters / [questObject.questObjects count]: %f", distanceInmeters / [questObject.questObjects count]);
                 
             }
             else
@@ -119,34 +117,47 @@ static float holdDistance = 18;
                 
                 int indexPosition = [[NSNumber numberWithFloat:roundf(distanceInmeters / [self.iterationDistance floatValue]) / [questObject.questObjects count]] intValue];
                 
-                NSLog(@"distanceInMeters: %f", distanceInmeters);
-                NSLog(@"self.iterationDistance: %f", [self.iterationDistance floatValue]);
-                NSLog(@"indexPosition: %d", indexPosition);
                 self.distanceLabel.text = [NSString stringWithFormat:@"%f", distanceInmeters];
                 
-                
-
+                if (!self.hasPresentedFirstConnect)
+                    indexPosition = 4;
                 
                 if (indexPosition % 4 == 0)
                 {
-                NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:indexPosition];
-                if (![questObject.receivedQuestObjects containsObject:theQuestObjectString])
-                {
-                    [questObject.receivedQuestObjects addObject:theQuestObjectString];
-                    
-                    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Object Found"
-                                                                     message:[NSString stringWithFormat:@"You've Found %@", theQuestObjectString]
-                                                                    delegate:nil
-                                                           cancelButtonTitle:@"Store It!"
-                                                           otherButtonTitles:nil];
-                    
-                    [alert show];
-                    [alert release];
+                    NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:indexPosition];
+                    if (![questObject.receivedQuestObjects containsObject:theQuestObjectString])
+                    {
+                        [questObject.receivedQuestObjects addObject:theQuestObjectString];
+                        
+                        FoundItemViewController *foundItemViewController = [[FoundItemViewController alloc] initWithNibName:@"FoundItemViewController" bundle:nil];
+                        foundItemViewController.delegate = self;                        
+                        foundItemViewController.view.backgroundColor = [UIColor clearColor];
+                        [foundItemViewController initializeWithObjectString:theQuestObjectString];
+                        foundItemViewController.view.alpha = 0;
+                        [self.view addSubview:foundItemViewController.view];
+                        
+                        [UIView beginAnimations:nil context:nil];
+                        [UIView setAnimationDuration:1];
+                        foundItemViewController.view.alpha = 1;
+                        [UIView commitAnimations];
+                        
+                        
+                        /*                    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Object Found"
+                         message:[NSString stringWithFormat:@"You've Found %@", theQuestObjectString]
+                         delegate:nil
+                         cancelButtonTitle:@"Store It!"
+                         otherButtonTitles:nil];
+                         
+                         [alert show];
+                         [alert release];
+                         
+                         */
+                        
+                        
+                    }
                     
                 }
-                
-                }
-                if (distanceInmeters < holdDistance)
+                if (distanceInmeters < holdDistance && self.hasPresentedFirstConnect)
                 {
                     
                     
@@ -179,6 +190,15 @@ static float holdDistance = 18;
     //        CLLocationCoordinate2D pointB = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
     
     
+}
+
+-(void)foundAcceptButtonHit:(FoundItemViewController *)vc
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    vc.view.alpha = 0;
+    [UIView commitAnimations];
+    self.hasPresentedFirstConnect = YES;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

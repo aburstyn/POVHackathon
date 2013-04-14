@@ -18,8 +18,7 @@
 }
 
 +(QuestObject *)getSharedQuestObject;
-+(void)createQuestObjectWithStartLocation:(CLLocation *)theStartLocation endLocation:(CLLocation *)theEndLocation withQuestObjects:(NSArray *)theQuestObjects;
-
++(void)createQuestObjectWithStartLocation:(CLLocation *)theStartLocation endLocation:(CLLocation *)theEndLocation;
 -(void)addReceivedQuestObject:(id)obj;
 
 @property (nonatomic, retain) CLLocation *startPosition;

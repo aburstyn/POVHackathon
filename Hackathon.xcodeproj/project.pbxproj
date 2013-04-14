@@ -884,6 +884,10 @@
 		7BB14909171A75C700EECC30 /* finished_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14908171A75C700EECC30 /* finished_background@2x.png */; };
 		7BB1490D171A761100EECC30 /* FinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1490B171A761100EECC30 /* FinishedViewController.m */; };
 		7BB1490E171A761100EECC30 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB1490C171A761100EECC30 /* FinishedViewController.xib */; };
+		7BB14913171A776200EECC30 /* FoundItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB14911171A776200EECC30 /* FoundItemViewController.m */; };
+		7BB14914171A776200EECC30 /* FoundItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14912171A776200EECC30 /* FoundItemViewController.xib */; };
+		7BB14916171A779600EECC30 /* found_item_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14915171A779600EECC30 /* found_item_background@2x.png */; };
+		7BB14918171A797300EECC30 /* item_clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14917171A797300EECC30 /* item_clock@2x.png */; };
 		7BB843FA17198FAE003983DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB843F917198FAE003983DA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -1783,6 +1787,11 @@
 		7BB1490A171A761100EECC30 /* FinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedViewController.h; sourceTree = "<group>"; };
 		7BB1490B171A761100EECC30 /* FinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedViewController.m; sourceTree = "<group>"; };
 		7BB1490C171A761100EECC30 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinishedViewController.xib; sourceTree = "<group>"; };
+		7BB14910171A776200EECC30 /* FoundItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundItemViewController.h; sourceTree = "<group>"; };
+		7BB14911171A776200EECC30 /* FoundItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundItemViewController.m; sourceTree = "<group>"; };
+		7BB14912171A776200EECC30 /* FoundItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundItemViewController.xib; sourceTree = "<group>"; };
+		7BB14915171A779600EECC30 /* found_item_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_item_background@2x.png"; sourceTree = "<group>"; };
+		7BB14917171A797300EECC30 /* item_clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_clock@2x.png"; sourceTree = "<group>"; };
 		7BB843F917198FAE003983DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1921,6 +1930,8 @@
 		030516151719F0370055D3CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7BB14917171A797300EECC30 /* item_clock@2x.png */,
+				7BB14915171A779600EECC30 /* found_item_background@2x.png */,
 				7BB14908171A75C700EECC30 /* finished_background@2x.png */,
 				7BB148FC171A703A00EECC30 /* slider_background@2x.png */,
 				7BB14902171A723A00EECC30 /* slider_tab@2x.png */,
@@ -2846,6 +2857,7 @@
 		7B25D69E1715B1C90004BA51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7BB1490F171A775200EECC30 /* FoundItem */,
 				7BB14904171A756600EECC30 /* Finished */,
 				7BB148F1171A6CD100EECC30 /* Vulnerability */,
 				030515EF1719BB680055D3CA /* MediaPlayer */,
@@ -2884,6 +2896,16 @@
 				7BB1490C171A761100EECC30 /* FinishedViewController.xib */,
 			);
 			name = Finished;
+			sourceTree = "<group>";
+		};
+		7BB1490F171A775200EECC30 /* FoundItem */ = {
+			isa = PBXGroup;
+			children = (
+				7BB14910171A776200EECC30 /* FoundItemViewController.h */,
+				7BB14911171A776200EECC30 /* FoundItemViewController.m */,
+				7BB14912171A776200EECC30 /* FoundItemViewController.xib */,
+			);
+			name = FoundItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3788,6 +3810,9 @@
 				7BB14903171A723A00EECC30 /* slider_tab@2x.png in Resources */,
 				7BB14909171A75C700EECC30 /* finished_background@2x.png in Resources */,
 				7BB1490E171A761100EECC30 /* FinishedViewController.xib in Resources */,
+				7BB14914171A776200EECC30 /* FoundItemViewController.xib in Resources */,
+				7BB14916171A779600EECC30 /* found_item_background@2x.png in Resources */,
+				7BB14918171A797300EECC30 /* item_clock@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3814,6 +3839,7 @@
 				7BB148F9171A6D0F00EECC30 /* VulerabilityViewController.m in Sources */,
 				7BB14900171A70C300EECC30 /* IndexTouchView.m in Sources */,
 				7BB1490D171A761100EECC30 /* FinishedViewController.m in Sources */,
+				7BB14913171A776200EECC30 /* FoundItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

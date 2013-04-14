@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-
+#import "VulerabilityViewController.h"
 
 @interface MediaPlayerViewController ()
 
@@ -111,20 +111,22 @@
         UIImage *theImage = [UIImage imageNamed:imageFilename];
         self.playerImageView.image = theImage;
         
-//        [self.playerImageView removeFromSuperview];
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:1.5];
-//        [UIView setAnimationDelegate:self];
- //       [UIView setAnimationDidStopSelector:@selector(imageViewDidFade)];
         self.playerImageView.alpha = 0;
         [UIView commitAnimations];
         
-        UIButton *done = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        done.frame = CGRectMake(50,50,100,50);
-        [done setTitle:@"Done" forState:UIControlStateNormal];
-        [done addTarget:self action:@selector(doneMovie:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:done];
+      
+        VulerabilityViewController *vulerabilityViewController = [[VulerabilityViewController alloc] initWithNibName:@"VulerabilityViewController" bundle:nil];
+        vulerabilityViewController.view.alpha = 0;
+        [self.view addSubview:vulerabilityViewController.view];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:1.5];
+        vulerabilityViewController.view.alpha = 1;
+        [UIView commitAnimations];
+        
         
         
         

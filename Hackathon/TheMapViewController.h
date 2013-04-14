@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "FoundItemViewController.h"
 
 @class TabRootViewController;
 @interface TheMapViewController : UIViewController
@@ -17,6 +18,8 @@
     
     BOOL hasStartedTrip;
     BOOL hasTripEnded;
+    BOOL hasPresentedFirstConnect;
+    
     NSNumber *tripDistance;
     NSNumber *iterationDistance;
     
@@ -25,10 +28,14 @@
     UILabel *distanceLabel;
     
 }
+
+-(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
+
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) NSMutableArray *pinObjectsArray;
 @property (nonatomic, assign) BOOL hasStartedTrip;
 @property (nonatomic, assign) BOOL hasTripEnded;
+@property (nonatomic, assign) BOOL hasPresentedFirstConnect;
 @property (nonatomic, retain) NSNumber *tripDistance;
 @property (nonatomic, retain) NSNumber *iterationDistance;
 
