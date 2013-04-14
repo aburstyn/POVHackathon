@@ -29,6 +29,7 @@
 		030516141719EE840055D3CA /* signpainterhousebrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 030516131719EE840055D3CA /* signpainterhousebrush.ttf */; };
 		0305161B1719F1190055D3CA /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0305161A1719F1190055D3CA /* splash.jpg */; };
 		0305161D1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0305161C1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg */; };
+		0326D8C6171AF3A00087C55E /* found_character@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8C5171AF39F0087C55E /* found_character@2x.png */; };
 		03D49F15171A416A003E6DE5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F14171A416A003E6DE5 /* CoreVideo.framework */; };
 		03D49F17171A416F003E6DE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F16171A416F003E6DE5 /* CoreMedia.framework */; };
 		03D49F1C171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */; };
@@ -927,6 +928,7 @@
 		030516131719EE840055D3CA /* signpainterhousebrush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = signpainterhousebrush.ttf; sourceTree = "<group>"; };
 		0305161A1719F1190055D3CA /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		0305161C1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = PROFILE_INFO_ENTER.jpg; path = "../../../Dropbox/@home/APPLICATION/WIREFRAMES/PROFILE_INFO_ENTER.jpg"; sourceTree = "<group>"; };
+		0326D8C5171AF39F0087C55E /* found_character@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_character@2x.png"; sourceTree = "<group>"; };
 		03D49F14171A416A003E6DE5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		03D49F16171A416F003E6DE5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Viper1Alpha_520X320 001.png"; sourceTree = "<group>"; };
@@ -1936,6 +1938,7 @@
 		030516151719F0370055D3CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0326D8C5171AF39F0087C55E /* found_character@2x.png */,
 				7BB1491D171AD61000EECC30 /* progress_bar_background@2x.png */,
 				7BB14919171AD58100EECC30 /* gotobridge@2x.png */,
 				7BB1491A171AD58100EECC30 /* gotopark@2x.png */,
@@ -2867,9 +2870,9 @@
 			isa = PBXGroup;
 			children = (
 				7BB1490F171A775200EECC30 /* FoundItem */,
-				7BB14904171A756600EECC30 /* Finished */,
-				7BB148F1171A6CD100EECC30 /* Vulnerability */,
 				030515EF1719BB680055D3CA /* MediaPlayer */,
+				7BB148F1171A6CD100EECC30 /* Vulnerability */,
+				7BB14904171A756600EECC30 /* Finished */,
 				030515FE1719D7FC0055D3CA /* TabHome */,
 				030515FD1719D7D80055D3CA /* Home */,
 			);
@@ -3825,6 +3828,7 @@
 				7BB1491B171AD58100EECC30 /* gotobridge@2x.png in Resources */,
 				7BB1491C171AD58100EECC30 /* gotopark@2x.png in Resources */,
 				7BB1491E171AD61000EECC30 /* progress_bar_background@2x.png in Resources */,
+				0326D8C6171AF3A00087C55E /* found_character@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

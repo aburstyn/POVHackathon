@@ -138,6 +138,8 @@ static float desiredRange = 18;
                     
                     self.tripDistance = nil;
                     
+                    [self journeyBegan];
+                    
                 }
                 
                 self.iterationDistance = [NSNumber numberWithFloat:distanceInmeters / [questObject.questObjects count]];
@@ -148,12 +150,7 @@ static float desiredRange = 18;
             }
             else
             {
-                
-                UIImage *goToBridgeImage = [UIImage imageNamed:@"gotobridge.png"];
-                if (self.goToOverlayImageView.image != goToBridgeImage)
-                    self.goToOverlayImageView.image = goToBridgeImage;
-
-                
+                                
                 QuestObject *questObject = [QuestObject getSharedQuestObject];
                 MapPinObject *endLocationPinObject = [self.pinObjectsArray objectAtIndex:1];
                 CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:endLocationPinObject.coordinate.latitude longitude:endLocationPinObject.coordinate.longitude];
@@ -221,6 +218,13 @@ static float desiredRange = 18;
         self.holdDistance = desiredRange;
 }
 
+-(void)journeyBegan
+{
+    UIImage *goToBridgeImage = [UIImage imageNamed:@"gotobridge.png"];
+    if (self.goToOverlayImageView.image != goToBridgeImage)
+        self.goToOverlayImageView.image = goToBridgeImage;
+}
+
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc
 {
     [UIView beginAnimations:nil context:nil];
@@ -231,7 +235,7 @@ static float desiredRange = 18;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self.theTabRootViewController presentMediaPlayer];
+    [self.theTabRootViewController journeyCompleted];
 }
 
 

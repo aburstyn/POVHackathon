@@ -17,6 +17,8 @@
 @synthesize youViewController;
 @synthesize mapViewController;
 
+@synthesize alignImageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,15 +39,40 @@
 }
 
 
+-(void)journeyCompleted
+{
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    self.alignImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10,0,550, 270)];
+    self.alignImageView.image = [UIImage imageNamed:@"found_character.png"];
+    self.alignImageView.alpha = 0;
+    [self.view addSubview:self.alignImageView];
+    
+        
+    self.doneButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+    self.doneButton.frame = CGRectMake(100,100,100,50);
+    [self.doneButton addTarget:self action:@selector(presentMediaPlayer) forControlEvents:UIControlEventTouchUpInside];
+    [self.doneButton setTitle:@"done" forState:UIControlStateNormal];
+    [self.view addSubview:self.doneButton];
+    self.doneButton.alpha = 0;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:.45];
+    self.alignImageView.alpha = 1;
+    self.doneButton.alpha = 1;
+    [self.mapViewController.view removeFromSuperview];
+    [UIView commitAnimations];
+
+    
+}
+
 -(void)presentMediaPlayer
 {
+    [self.alignImageView removeFromSuperview];
+    [self.doneButton removeFromSuperview];
     MediaPlayerViewController *mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
     [self.view addSubview:mediaPlayerViewController.view];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 @end

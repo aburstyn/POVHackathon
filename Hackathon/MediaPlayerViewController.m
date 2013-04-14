@@ -64,7 +64,7 @@
         self.playerImageView = nil;
         
     }
-    self.playerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.playerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 18, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:self.playerImageView];
     self.playerImageView.alpha = 0;
     

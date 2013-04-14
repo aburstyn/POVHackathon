@@ -14,10 +14,18 @@
 {
     YouViewController *youViewController;
     TheMapViewController *mapViewController;
+    
+    UIImageView *alignImageView;
+    UIButton *doneButton;
 }
+
+-(void)journeyCompleted;
 
 -(void)presentMediaPlayer;
 
 @property (nonatomic, retain) YouViewController *youViewController;
 @property (nonatomic, retain) TheMapViewController *mapViewController;
+
+@property (nonatomic, retain) UIImageView *alignImageView;
+@property (nonatomic, retain) UIButton *doneButton;
 @end

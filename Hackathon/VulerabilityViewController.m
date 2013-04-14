@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.frame = CGRectMake(0,0,self.view.frame.size.width, 330);
+    
     self.howLabel.numberOfLines = 0;
     self.howLabel.text = @"HOW VULNERABLE IS VIPER?";
     self.howLabel.font = [UIFont fontWithName:@"SignPainter" size:25];
