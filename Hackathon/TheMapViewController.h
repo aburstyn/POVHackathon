@@ -35,6 +35,9 @@
     
     float holdDistance;
 
+    UIImageView *startInterstatialImageView;
+    UIButton *startButton;
+    
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
@@ -58,4 +61,7 @@
 @property (nonatomic, retain) IBOutlet UISlider *progressSlider;
 
 @property (nonatomic, assign) float holdDistance;
+
+@property (nonatomic, retain) UIImageView *startInterstatialImageView;
+@property (nonatomic, retain) UIButton *startButton;
 @end

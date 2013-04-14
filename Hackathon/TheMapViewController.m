@@ -17,7 +17,7 @@
 
 @implementation TheMapViewController
 
-@synthesize mapView, pinObjectsArray, tripDistance, theTabRootViewController, distanceLabel;
+@synthesize mapView, pinObjectsArray, tripDistance, theTabRootViewController, distanceLabel, startButton;
 
 @synthesize hasStartedTrip;
 @synthesize hasTripEnded;
@@ -28,6 +28,8 @@
 @synthesize progressSlider;
 
 @synthesize holdDistance;
+
+@synthesize startInterstatialImageView;
 
 static float sentinalValue = 1800000; // 18
 static float desiredRange = 18;
@@ -81,6 +83,8 @@ static float desiredRange = 18;
     [self.progressSlider setMinimumTrackTintColor:[UIColor redColor]];
     [self.progressSlider setMaximumTrackTintColor:[UIColor clearColor]];
     NSLog(@"slider.subviews: %@", [self.progressSlider subviews]);
+    
+    self.mapView.delegate = self;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -131,18 +135,20 @@ static float desiredRange = 18;
                 {
                     self.hasStartedTrip = YES;
                     
-                    UIAlertView  *alert = [[UIAlertView alloc] initWithTitle:@"Journey Started"
-                                                                     message:@"Please travel to your endpoint"
-                                                                    delegate:nil
-                                                           cancelButtonTitle:@"Ok"
-                                                           otherButtonTitles:nil];
+                    NSLog(@"herehereherehereherehereherehereherehereherehereherehereherehere");
                     
-                    [alert show];
-                    [alert release];
+                    self.startInterstatialImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height)];
+                    self.startInterstatialImageView.image = [UIImage imageNamed:@"locationscreen.png"];
+                    [self.view addSubview:self.startInterstatialImageView];
+                    
+                    self.startButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+                    self.startButton.frame = CGRectMake(0,0,520, 300);
+                    [self.startButton addTarget:self action:@selector(journeyBegan) forControlEvents:UIControlEventTouchUpInside];
+                    [self.view addSubview:self.startButton];
                     
                     self.tripDistance = nil;
                     
-                    [self journeyBegan];
+//                    [self journeyBegan];
                     
                 }
                 
@@ -224,6 +230,10 @@ static float desiredRange = 18;
 
 -(void)journeyBegan
 {
+    NSLog(@"journeyBegan");
+    [self.startInterstatialImageView removeFromSuperview];
+    [self.startButton removeFromSuperview];
+    
     UIImage *goToBridgeImage = [UIImage imageNamed:@"gotobridge.png"];
     if (self.goToOverlayImageView.image != goToBridgeImage)
         self.goToOverlayImageView.image = goToBridgeImage;
@@ -243,7 +253,30 @@ static float desiredRange = 18;
 }
 
 
-
+- (MKAnnotationView *)mapView:(MKMapView *)mapview viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    NSLog(@"%@ %s !!!!: %@", self, __func__);
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+    NSLog(@"asdfasdfasdfasdf");
+    annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"locationscren.png"]];
+    if(annotationView)
+        return annotationView;
+    else
+    {NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        MKAnnotationView *annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                                         reuseIdentifier:AnnotationIdentifier] autorelease];
+        annotationView.canShowCallout = YES;
+        annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"someImage.png"]];
+        
+    }
+    
+    return nil;
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

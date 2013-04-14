@@ -82,7 +82,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     
     [NSTimer scheduledTimerWithTimeInterval:1/29.97 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Viper01_Audio" ofType:@"aif"];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"ChetAudio_041413_1-2" ofType:@"aif"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
@@ -91,7 +91,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 -(void)timerFired:(NSTimer *)theTimer
 {
     
-    self.currentCount++;
+    
     
     if (self.currentCount == 100)
     {
@@ -101,17 +101,18 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         
         self.screengrabImage = image;
     }
-    if (self.currentCount <= 832)
+    if (self.currentCount < 783)
     {
+        
         NSString *numberString = nil;
         if (self.currentCount < 10)
-            numberString = [NSString stringWithFormat:@"00%d", self.currentCount];
+            numberString = [NSString stringWithFormat:@"0000%d", self.currentCount];
         else if (self.currentCount < 100)
-            numberString = [NSString stringWithFormat:@"0%d", self.currentCount];
+            numberString = [NSString stringWithFormat:@"000%d", self.currentCount];
         else
-            numberString = [NSString stringWithFormat:@"%d", self.currentCount];
+            numberString = [NSString stringWithFormat:@"00%d", self.currentCount];
         
-        NSString *imageFilename = [NSString stringWithFormat:@"Viper1Alpha_520X320 %@.png", numberString];
+        NSString *imageFilename = [NSString stringWithFormat:@"ChetAlpha_520X320_%@.png", numberString];
         
         UIImage *theImage = [UIImage imageNamed:imageFilename];
         self.playerImageView.image = theImage;
@@ -148,12 +149,19 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         vulerabilityViewController.view.alpha = 1;
         [UIView commitAnimations];
         
-        self.screengrabImage = [self rotateWithSource:self.screengrabImage withOrientation:UIImageOrientationRight];
-//        vulerabilityViewController.screenGrabImageView.image = self.screengrabImage;
+
+        self.screengrabImage = [[UIImage alloc] initWithCGImage: self.screengrabImage.CGImage
+                                                             scale: 1.0
+                                                       orientation: UIImageOrientationLeft];
+        
+        vulerabilityViewController.screenGrabImageView.image = self.screengrabImage;
 /*        vulerabilityViewController.screenGrabImageView.transform = CGAffineTransformMakeRotation(-3.141592/2);
         vulerabilityViewController.screenGrabImageView.frame = CGRectMake(0,0,30,30);
         */
     }
+    
+    self.currentCount++;
+    
 }
 
 -(UIImage*) rotateWithSource:(UIImage *)src withOrientation:(UIImageOrientation)orientation

@@ -80,7 +80,7 @@ static HomeViewController *theSharedHomeViewController;
     
     
     
-    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
+self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
     [self.view addSubview:self.mediaPlayerViewController.view];
 
 //    VulerabilityViewController *vulnerabilityViewCOntroller = [[VulerabilityViewController alloc] initWithNibName:@"VulerabilityViewController" bundle:nil];
