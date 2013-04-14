@@ -37,6 +37,10 @@ static float desiredRange = 18;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.pinObjectsArray = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"map_icon.png"] tag:0];
+        
+        
     }
     return self;
 }

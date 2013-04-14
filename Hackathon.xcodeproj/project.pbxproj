@@ -37,6 +37,10 @@
 		0326D8DE171B04930087C55E /* TrophyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8DC171B04930087C55E /* TrophyViewController.xib */; };
 		0326D8E3171B04BF0087C55E /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8E1171B04BF0087C55E /* InventoryViewController.m */; };
 		0326D8E4171B04BF0087C55E /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8E2171B04BF0087C55E /* InventoryViewController.xib */; };
+		0326D8EF171B06490087C55E /* trophy_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8E8171B06490087C55E /* trophy_icon@2x.png */; };
+		0326D8F0171B06490087C55E /* inventory_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8E9171B06490087C55E /* inventory_icon@2x.png */; };
+		0326D8F1171B06490087C55E /* map_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8EA171B06490087C55E /* map_icon@2x.png */; };
+		0326D8F2171B06490087C55E /* profile_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8EB171B06490087C55E /* profile_icon@2x.png */; };
 		03D49F15171A416A003E6DE5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F14171A416A003E6DE5 /* CoreVideo.framework */; };
 		03D49F17171A416F003E6DE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F16171A416F003E6DE5 /* CoreMedia.framework */; };
 		03D49F1C171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */; };
@@ -947,6 +951,10 @@
 		0326D8E0171B04BF0087C55E /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
 		0326D8E1171B04BF0087C55E /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		0326D8E2171B04BF0087C55E /* InventoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
+		0326D8E8171B06490087C55E /* trophy_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy_icon@2x.png"; sourceTree = "<group>"; };
+		0326D8E9171B06490087C55E /* inventory_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory_icon@2x.png"; sourceTree = "<group>"; };
+		0326D8EA171B06490087C55E /* map_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_icon@2x.png"; sourceTree = "<group>"; };
+		0326D8EB171B06490087C55E /* profile_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_icon@2x.png"; sourceTree = "<group>"; };
 		03D49F14171A416A003E6DE5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		03D49F16171A416F003E6DE5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Viper1Alpha_520X320 001.png"; sourceTree = "<group>"; };
@@ -1999,6 +2007,10 @@
 		0326D8D0171B03590087C55E /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				0326D8E8171B06490087C55E /* trophy_icon@2x.png */,
+				0326D8E9171B06490087C55E /* inventory_icon@2x.png */,
+				0326D8EA171B06490087C55E /* map_icon@2x.png */,
+				0326D8EB171B06490087C55E /* profile_icon@2x.png */,
 			);
 			name = tabbar;
 			sourceTree = "<group>";
@@ -3893,6 +3905,10 @@
 				0326D8CC171AFF450087C55E /* SetupViewController.xib in Resources */,
 				0326D8DE171B04930087C55E /* TrophyViewController.xib in Resources */,
 				0326D8E4171B04BF0087C55E /* InventoryViewController.xib in Resources */,
+				0326D8EF171B06490087C55E /* trophy_icon@2x.png in Resources */,
+				0326D8F0171B06490087C55E /* inventory_icon@2x.png in Resources */,
+				0326D8F1171B06490087C55E /* map_icon@2x.png in Resources */,
+				0326D8F2171B06490087C55E /* profile_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

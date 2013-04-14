@@ -21,7 +21,7 @@
     if (self) {
         // Custom initialization
         
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"A" image:[UIImage imageNamed:@"tropy_icon.png"] tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"profile_icon.png"] tag:0];
         
     }
     return self;
