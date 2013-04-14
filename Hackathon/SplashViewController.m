@@ -35,12 +35,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
- 
+    [super viewDidLoad]; 
+    self.view.frame = CGRectMake(0,0,520,320);
+    
     AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    [del.homeViewController splashViewComplete];
     
-    [NSTimer scheduledTimerWithTimeInterval:4 target:del.homeViewController selector:@selector(splashViewComplete) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:del.homeViewController selector:@selector(splashViewComplete) userInfo:nil repeats:NO];
     
 }
 

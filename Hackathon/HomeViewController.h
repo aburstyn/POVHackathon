@@ -11,13 +11,15 @@
 #import "LoginViewController.h"
 #import "TakePhotoViewController.h"
 #import "MediaPlayerViewController.h"
-
+#import "SetupViewController.h"
 @interface HomeViewController : UIViewController
 {
     SplashViewController *splashViewController;
     LoginViewController *loginViewController;
     TakePhotoViewController *takePhotoViewController;
     MediaPlayerViewController *mediaPlayerViewController;
+    
+    SetupViewController *setupViewController;
 }
 
 
@@ -33,4 +35,5 @@
 @property (nonatomic, retain) TakePhotoViewController *takePhotoViewController;
 @property (nonatomic, retain) MediaPlayerViewController *mediaPlayerViewController;
 
+@property (nonatomic, retain) SetupViewController *setupViewController;
 @end

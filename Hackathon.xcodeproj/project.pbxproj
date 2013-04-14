@@ -30,6 +30,8 @@
 		0305161B1719F1190055D3CA /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0305161A1719F1190055D3CA /* splash.jpg */; };
 		0305161D1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0305161C1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg */; };
 		0326D8C6171AF3A00087C55E /* found_character@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8C5171AF39F0087C55E /* found_character@2x.png */; };
+		0326D8CB171AFF450087C55E /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8C9171AFF450087C55E /* SetupViewController.m */; };
+		0326D8CC171AFF450087C55E /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8CA171AFF450087C55E /* SetupViewController.xib */; };
 		03D49F15171A416A003E6DE5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F14171A416A003E6DE5 /* CoreVideo.framework */; };
 		03D49F17171A416F003E6DE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F16171A416F003E6DE5 /* CoreMedia.framework */; };
 		03D49F1C171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */; };
@@ -929,6 +931,9 @@
 		0305161A1719F1190055D3CA /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		0305161C1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = PROFILE_INFO_ENTER.jpg; path = "../../../Dropbox/@home/APPLICATION/WIREFRAMES/PROFILE_INFO_ENTER.jpg"; sourceTree = "<group>"; };
 		0326D8C5171AF39F0087C55E /* found_character@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_character@2x.png"; sourceTree = "<group>"; };
+		0326D8C8171AFF450087C55E /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		0326D8C9171AFF450087C55E /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		0326D8CA171AFF450087C55E /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
 		03D49F14171A416A003E6DE5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		03D49F16171A416F003E6DE5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Viper1Alpha_520X320 001.png"; sourceTree = "<group>"; };
@@ -1888,9 +1893,10 @@
 		030515FD1719D7D80055D3CA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				030515D41719B2F00055D3CA /* Splash */,
+				0326D8C7171AFF310087C55E /* Setup */,
 				030515D61719B3100055D3CA /* HomeViewController.h */,
 				030515D71719B3100055D3CA /* HomeViewController.m */,
-				030515D41719B2F00055D3CA /* Splash */,
 				030515D91719B3300055D3CA /* Login */,
 				030515E51719B8780055D3CA /* Photo */,
 			);
@@ -1960,6 +1966,16 @@
 				0305161C1719F3D30055D3CA /* PROFILE_INFO_ENTER.jpg */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		0326D8C7171AFF310087C55E /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				0326D8C8171AFF450087C55E /* SetupViewController.h */,
+				0326D8C9171AFF450087C55E /* SetupViewController.m */,
+				0326D8CA171AFF450087C55E /* SetupViewController.xib */,
+			);
+			name = Setup;
 			sourceTree = "<group>";
 		};
 		03D49F1A171A58C7003E6DE5 /* PNGSequence */ = {
@@ -3829,6 +3845,7 @@
 				7BB1491C171AD58100EECC30 /* gotopark@2x.png in Resources */,
 				7BB1491E171AD61000EECC30 /* progress_bar_background@2x.png in Resources */,
 				0326D8C6171AF3A00087C55E /* found_character@2x.png in Resources */,
+				0326D8CC171AFF450087C55E /* SetupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3856,6 +3873,7 @@
 				7BB14900171A70C300EECC30 /* IndexTouchView.m in Sources */,
 				7BB1490D171A761100EECC30 /* FinishedViewController.m in Sources */,
 				7BB14913171A776200EECC30 /* FoundItemViewController.m in Sources */,
+				0326D8CB171AFF450087C55E /* SetupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

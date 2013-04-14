@@ -21,6 +21,8 @@ static HomeViewController *theSharedHomeViewController;
 @synthesize splashViewController, loginViewController;
 @synthesize takePhotoViewController, mediaPlayerViewController;
 
+@synthesize setupViewController;
+
 
 +(HomeViewController *)sharedHomeViewController
 {
@@ -45,6 +47,7 @@ static HomeViewController *theSharedHomeViewController;
     
     self.view.backgroundColor = [UIColor darkGrayColor];
     
+    self.view.frame = CGRectMake(0,0,520,320);
     
     
 //    self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
@@ -53,8 +56,12 @@ static HomeViewController *theSharedHomeViewController;
 //    self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 //    [self.view addSubview:self.loginViewController.view];
 
+//    self.takePhotoViewController = [[TakePhotoViewController alloc] initWithNibName:@"TakePhotoViewController" bundle:nil];
+//    [self.view addSubview:self.takePhotoViewController.view];
     
-        
+    self.setupViewController = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
+    [self.view addSubview:self.setupViewController.view];
+    
     self.splashViewController = [[SplashViewController alloc] initWithNibName:@"SplashViewController" bundle:nil];
     [self.view addSubview:self.splashViewController.view];
 }
@@ -64,11 +71,20 @@ static HomeViewController *theSharedHomeViewController;
 {
     NSLog(@"splashViewComplete");
     
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:.55];
+    self.splashViewController.view.alpha = 0;
+    [UIView commitAnimations];
+
+    
+    
+    
+    
   //  self.mediaPlayerViewController = [[MediaPlayerViewController alloc] initWithNibName:@"MediaPlayerViewController" bundle:nil];
 //    [self.view addSubview:self.mediaPlayerViewController.view];
 
-    VulerabilityViewController *vulnerabilityViewCOntroller = [[VulerabilityViewController alloc] initWithNibName:@"VulerabilityViewController" bundle:nil];
-    [self.view addSubview:vulnerabilityViewCOntroller.view];
+//    VulerabilityViewController *vulnerabilityViewCOntroller = [[VulerabilityViewController alloc] initWithNibName:@"VulerabilityViewController" bundle:nil];
+//    [self.view addSubview:vulnerabilityViewCOntroller.view];
     /*
     self.loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.view addSubview:self.loginViewController.view];

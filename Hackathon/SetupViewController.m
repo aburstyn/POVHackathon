@@ -1,23 +1,21 @@
 //
-//  TakePhotoViewController.m
+//  SetupViewController.m
 //  Hackathon
 //
-//  Created by Josh Klobe on 4/13/13.
+//  Created by Josh Klobe on 4/14/13.
 //  Copyright (c) 2013 Josh Klobe. All rights reserved.
 //
 
-#import "TakePhotoViewController.h"
+#import "SetupViewController.h"
 #import "AppDelegate.h"
-
-
-@interface TakePhotoViewController ()
+@interface SetupViewController ()
 
 @end
 
-@implementation TakePhotoViewController
+@implementation SetupViewController
 
-@synthesize theButton;
-@synthesize photoImageView;
+@synthesize uip, photoImageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,22 +25,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.view.frame = CGRectMake(-40,0,520,320);
-    
-    
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePhotoButtonHit)];
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-    // Do any additional setup after loading the view from its nib.
-}
-
 -(IBAction)takePhotoButtonHit
 {
     NSLog(@"takePhotoButtonHit");
-    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
+    
+    
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] && self.uip == nil)
     {
         self.uip = [[UIImagePickerController alloc] init];
         self.uip.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -61,44 +49,53 @@
         [UIView setAnimationDuration:.35];
         self.uip.view.frame = CGRectMake(0,self.uip.view.frame.origin.y,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
         [UIView commitAnimations];
-
+        
         
     }
+
+    
+    
 }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.frame = CGRectMake(0,0,520,320);
+    // Do any additional setup after loading the view from its nib.
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"didFinishPickingMediaWithInfo: %@", info);
     
     self.photoImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    
-    CGRect frame = self.theButton.frame;
+
+
+
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [nextButton setTitle:@"Next" forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
-    nextButton.frame = frame;
-    [self.theButton removeFromSuperview];
+    nextButton.frame = CGRectMake(0,0,100,50);
     [self.view addSubview:nextButton];
 
- 
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.35];
     self.uip.view.frame = CGRectMake(-580,00,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
     [UIView commitAnimations];
-
+    
 }
 
 -(void)nextButtonHit
 {
     AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [del.homeViewController takePhotoViewComplete];
-    
+    [del transitionToRootTabBar];
 }
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+
+- (void)didReceiveMemoryWarning
 {
-    
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
-
 
 @end
