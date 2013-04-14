@@ -876,6 +876,11 @@
 		7B25D67E1715B0FE0004BA51 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B25D67D1715B0FE0004BA51 /* Default-568h@2x.png */; };
 		7B25D6A21715B3730004BA51 /* PositionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D6A11715B3730004BA51 /* PositionTracker.m */; };
 		7B25D6A41715B3820004BA51 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B25D6A31715B3820004BA51 /* CoreLocation.framework */; };
+		7BB148F9171A6D0F00EECC30 /* VulerabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB148F7171A6D0F00EECC30 /* VulerabilityViewController.m */; };
+		7BB148FA171A6D0F00EECC30 /* VulerabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB148F8171A6D0F00EECC30 /* VulerabilityViewController.xib */; };
+		7BB148FD171A703A00EECC30 /* slider_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB148FC171A703A00EECC30 /* slider_background@2x.png */; };
+		7BB14900171A70C300EECC30 /* IndexTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB148FF171A70C300EECC30 /* IndexTouchView.m */; };
+		7BB14903171A723A00EECC30 /* slider_tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB14902171A723A00EECC30 /* slider_tab@2x.png */; };
 		7BB843FA17198FAE003983DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB843F917198FAE003983DA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -1764,6 +1769,13 @@
 		7B25D6A01715B3730004BA51 /* PositionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTracker.h; sourceTree = "<group>"; };
 		7B25D6A11715B3730004BA51 /* PositionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionTracker.m; sourceTree = "<group>"; };
 		7B25D6A31715B3820004BA51 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7BB148F6171A6D0F00EECC30 /* VulerabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VulerabilityViewController.h; sourceTree = "<group>"; };
+		7BB148F7171A6D0F00EECC30 /* VulerabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VulerabilityViewController.m; sourceTree = "<group>"; };
+		7BB148F8171A6D0F00EECC30 /* VulerabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VulerabilityViewController.xib; sourceTree = "<group>"; };
+		7BB148FC171A703A00EECC30 /* slider_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_background@2x.png"; sourceTree = "<group>"; };
+		7BB148FE171A70C300EECC30 /* IndexTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexTouchView.h; sourceTree = "<group>"; };
+		7BB148FF171A70C300EECC30 /* IndexTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexTouchView.m; sourceTree = "<group>"; };
+		7BB14902171A723A00EECC30 /* slider_tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab@2x.png"; sourceTree = "<group>"; };
 		7BB843F917198FAE003983DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -1902,6 +1914,8 @@
 		030516151719F0370055D3CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7BB148FC171A703A00EECC30 /* slider_background@2x.png */,
+				7BB14902171A723A00EECC30 /* slider_tab@2x.png */,
 				03D49F1A171A58C7003E6DE5 /* PNGSequence */,
 				030516161719F03C0055D3CA /* Login */,
 			);
@@ -2824,6 +2838,7 @@
 		7B25D69E1715B1C90004BA51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7BB148F1171A6CD100EECC30 /* Vulnerability */,
 				030515EF1719BB680055D3CA /* MediaPlayer */,
 				030515FE1719D7FC0055D3CA /* TabHome */,
 				030515FD1719D7D80055D3CA /* Home */,
@@ -2838,6 +2853,18 @@
 				7B25D6A11715B3730004BA51 /* PositionTracker.m */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		7BB148F1171A6CD100EECC30 /* Vulnerability */ = {
+			isa = PBXGroup;
+			children = (
+				7BB148F6171A6D0F00EECC30 /* VulerabilityViewController.h */,
+				7BB148F7171A6D0F00EECC30 /* VulerabilityViewController.m */,
+				7BB148F8171A6D0F00EECC30 /* VulerabilityViewController.xib */,
+				7BB148FE171A70C300EECC30 /* IndexTouchView.h */,
+				7BB148FF171A70C300EECC30 /* IndexTouchView.m */,
+			);
+			name = Vulnerability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3737,6 +3764,9 @@
 				03D4A599171A5A3C003E6DE5 /* Viper1Alpha_520X320 831.png in Resources */,
 				03D4A59A171A5A3C003E6DE5 /* Viper1Alpha_520X320 832.png in Resources */,
 				03DD0494171A5CC700A607DC /* Viper01_Audio.aif in Resources */,
+				7BB148FA171A6D0F00EECC30 /* VulerabilityViewController.xib in Resources */,
+				7BB148FD171A703A00EECC30 /* slider_background@2x.png in Resources */,
+				7BB14903171A723A00EECC30 /* slider_tab@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3760,6 +3790,8 @@
 				030516081719D9D40055D3CA /* TheMapViewController.m in Sources */,
 				0305160C1719DCDD0055D3CA /* MapPinObject.m in Sources */,
 				030516101719E7070055D3CA /* QuestObject.m in Sources */,
+				7BB148F9171A6D0F00EECC30 /* VulerabilityViewController.m in Sources */,
+				7BB14900171A70C300EECC30 /* IndexTouchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

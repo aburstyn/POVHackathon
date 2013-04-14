@@ -47,29 +47,9 @@
     
     self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
     self.uip.view.frame = CGRectMake(-550,-5,700,310);
-    
-    //  [UIView beginAnimations:nil context:nil];
-    //    [UIView setAnimationDuration:.35];
     self.uip.view.frame = CGRectMake(000,self.uip.view.frame.origin.y,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
-    //    [UIView commitAnimations];
     
-    
-    
-    
-    
-    UIButton *playButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    playButton.frame = CGRectMake(50,50,100,50);
-    [playButton setTitle:@"Play" forState:UIControlStateNormal];
-    [playButton addTarget:self action:@selector(playMovie:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:playButton];
-    
-    /*
-     UIButton *done = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-     done.frame = CGRectMake(50,50,100,50);
-     [done setTitle:@"Done" forState:UIControlStateNormal];
-     [done addTarget:self action:@selector(doneMovie:) forControlEvents:UIControlEventTouchUpInside];
-     [self.view addSubview:done];
-     */
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(playMovie:) userInfo:nil repeats:NO];
 }
 
 -(IBAction)playMovie:(id)sender
@@ -86,6 +66,13 @@
     }
     self.playerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:self.playerImageView];
+    self.playerImageView.alpha = 0;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3.5];
+    self.playerImageView.alpha = 1;
+    [UIView commitAnimations];
+    
     
     [NSTimer scheduledTimerWithTimeInterval:1/29.97 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
     
@@ -118,16 +105,35 @@
     else
     {
         [theTimer invalidate];
+        
+        NSString *imageFilename = [NSString stringWithFormat:@"Viper1Alpha_520X320 %@.png", @"832"];
+        
+        UIImage *theImage = [UIImage imageNamed:imageFilename];
+        self.playerImageView.image = theImage;
+        
 //        [self.playerImageView removeFromSuperview];
         
         [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:.35];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationDidStopSelector:@selector(imageViewDidFade)];
+        [UIView setAnimationDuration:1.5];
+//        [UIView setAnimationDelegate:self];
+ //       [UIView setAnimationDidStopSelector:@selector(imageViewDidFade)];
         self.playerImageView.alpha = 0;
         [UIView commitAnimations];
         
+        UIButton *done = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        done.frame = CGRectMake(50,50,100,50);
+        [done setTitle:@"Done" forState:UIControlStateNormal];
+        [done addTarget:self action:@selector(doneMovie:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:done];
+        
+        
+        
     }
+}
+
+-(void)doneMovie:(id)sender
+{
+    NSLog(@"doneMovie");
 }
 
 -(void)imageViewDidFade
