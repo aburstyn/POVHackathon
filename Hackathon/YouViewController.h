@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface YouViewController : UIViewController
+{
+    UIImageView *userImageView;
+}
 
+@property (nonatomic, retain) IBOutlet UIImageView *userImageView;
 @end

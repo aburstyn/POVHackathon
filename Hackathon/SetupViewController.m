@@ -8,6 +8,7 @@
 
 #import "SetupViewController.h"
 #import "AppDelegate.h"
+#import "UserProfileObject.h"
 @interface SetupViewController ()
 
 @end
@@ -84,10 +85,13 @@
     self.uip.view.frame = CGRectMake(-580,00,self.uip.view.frame.size.width,self.uip.view.frame.size.height);
     [UIView commitAnimations];
     
+    [UserProfileObject getSharedProfileObject].userImage = self.photoImageView.image;
+    
 }
 
 -(void)nextButtonHit
 {
+    
     AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [del transitionToRootTabBar];
 }
