@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "YouViewController.h"
 #import "TheMapViewController.h"
-
+#import "InventoryViewController.h"
+#import "TrophyViewController.h"
 @interface TabRootViewController : UITabBarController
 {
     YouViewController *youViewController;
     TheMapViewController *mapViewController;
+    
+    InventoryViewController *inventoryViewController;
+    TrophyViewController *trophyViewController;
+    
     
     UIImageView *alignImageView;
     UIButton *doneButton;
@@ -25,6 +30,9 @@
 
 @property (nonatomic, retain) YouViewController *youViewController;
 @property (nonatomic, retain) TheMapViewController *mapViewController;
+
+@property (nonatomic, retain) InventoryViewController *inventoryViewController;
+@property (nonatomic, retain) TrophyViewController *trophyViewController;
 
 @property (nonatomic, retain) UIImageView *alignImageView;
 @property (nonatomic, retain) UIButton *doneButton;

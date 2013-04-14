@@ -33,6 +33,10 @@
 		0326D8CB171AFF450087C55E /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8C9171AFF450087C55E /* SetupViewController.m */; };
 		0326D8CC171AFF450087C55E /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8CA171AFF450087C55E /* SetupViewController.xib */; };
 		0326D8CF171B02030087C55E /* UserProfileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8CE171B02030087C55E /* UserProfileObject.m */; };
+		0326D8DD171B04930087C55E /* TrophyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8DB171B04930087C55E /* TrophyViewController.m */; };
+		0326D8DE171B04930087C55E /* TrophyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8DC171B04930087C55E /* TrophyViewController.xib */; };
+		0326D8E3171B04BF0087C55E /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0326D8E1171B04BF0087C55E /* InventoryViewController.m */; };
+		0326D8E4171B04BF0087C55E /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0326D8E2171B04BF0087C55E /* InventoryViewController.xib */; };
 		03D49F15171A416A003E6DE5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F14171A416A003E6DE5 /* CoreVideo.framework */; };
 		03D49F17171A416F003E6DE5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D49F16171A416F003E6DE5 /* CoreMedia.framework */; };
 		03D49F1C171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */; };
@@ -937,6 +941,12 @@
 		0326D8CA171AFF450087C55E /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
 		0326D8CD171B02030087C55E /* UserProfileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileObject.h; sourceTree = "<group>"; };
 		0326D8CE171B02030087C55E /* UserProfileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileObject.m; sourceTree = "<group>"; };
+		0326D8DA171B04930087C55E /* TrophyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrophyViewController.h; sourceTree = "<group>"; };
+		0326D8DB171B04930087C55E /* TrophyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrophyViewController.m; sourceTree = "<group>"; };
+		0326D8DC171B04930087C55E /* TrophyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrophyViewController.xib; sourceTree = "<group>"; };
+		0326D8E0171B04BF0087C55E /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
+		0326D8E1171B04BF0087C55E /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
+		0326D8E2171B04BF0087C55E /* InventoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
 		03D49F14171A416A003E6DE5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		03D49F16171A416F003E6DE5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		03D49F1B171A58D7003E6DE5 /* Viper1Alpha_520X320 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Viper1Alpha_520X320 001.png"; sourceTree = "<group>"; };
@@ -1911,6 +1921,8 @@
 			children = (
 				030515FF1719D9460055D3CA /* You */,
 				030515D31719B2D80055D3CA /* Map */,
+				0326D8DF171B04B00087C55E /* Inventory */,
+				0326D8D9171B046F0087C55E /* Trophy */,
 				030515FA1719D7D20055D3CA /* TabRootViewController.h */,
 				030515FB1719D7D30055D3CA /* TabRootViewController.m */,
 			);
@@ -1949,6 +1961,7 @@
 		030516151719F0370055D3CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0326D8D0171B03590087C55E /* tabbar */,
 				0326D8C5171AF39F0087C55E /* found_character@2x.png */,
 				7BB1491D171AD61000EECC30 /* progress_bar_background@2x.png */,
 				7BB14919171AD58100EECC30 /* gotobridge@2x.png */,
@@ -1981,6 +1994,33 @@
 				0326D8CA171AFF450087C55E /* SetupViewController.xib */,
 			);
 			name = Setup;
+			sourceTree = "<group>";
+		};
+		0326D8D0171B03590087C55E /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tabbar;
+			sourceTree = "<group>";
+		};
+		0326D8D9171B046F0087C55E /* Trophy */ = {
+			isa = PBXGroup;
+			children = (
+				0326D8DA171B04930087C55E /* TrophyViewController.h */,
+				0326D8DB171B04930087C55E /* TrophyViewController.m */,
+				0326D8DC171B04930087C55E /* TrophyViewController.xib */,
+			);
+			name = Trophy;
+			sourceTree = "<group>";
+		};
+		0326D8DF171B04B00087C55E /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				0326D8E0171B04BF0087C55E /* InventoryViewController.h */,
+				0326D8E1171B04BF0087C55E /* InventoryViewController.m */,
+				0326D8E2171B04BF0087C55E /* InventoryViewController.xib */,
+			);
+			name = Inventory;
 			sourceTree = "<group>";
 		};
 		03D49F1A171A58C7003E6DE5 /* PNGSequence */ = {
@@ -3851,6 +3891,8 @@
 				7BB1491E171AD61000EECC30 /* progress_bar_background@2x.png in Resources */,
 				0326D8C6171AF3A00087C55E /* found_character@2x.png in Resources */,
 				0326D8CC171AFF450087C55E /* SetupViewController.xib in Resources */,
+				0326D8DE171B04930087C55E /* TrophyViewController.xib in Resources */,
+				0326D8E4171B04BF0087C55E /* InventoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3880,6 +3922,8 @@
 				7BB14913171A776200EECC30 /* FoundItemViewController.m in Sources */,
 				0326D8CB171AFF450087C55E /* SetupViewController.m in Sources */,
 				0326D8CF171B02030087C55E /* UserProfileObject.m in Sources */,
+				0326D8DD171B04930087C55E /* TrophyViewController.m in Sources */,
+				0326D8E3171B04BF0087C55E /* InventoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

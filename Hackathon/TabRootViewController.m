@@ -23,11 +23,21 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        self.inventoryViewController = [[InventoryViewController alloc] initWithNibName:@"InventoryViewController" bundle:nil];        
+        self.trophyViewController = [[TrophyViewController alloc] initWithNibName:@"TrophyViewController" bundle:nil];
+        
+        NSLog(@"self.inventoryViewController: %@", self.inventoryViewController);
+        NSLog(@"trophyViewController: %@", self.trophyViewController);
+        
 
         self.youViewController = [[YouViewController alloc] initWithNibName:@"YouViewController" bundle:nil];
         self.mapViewController = [[TheMapViewController alloc] initWithNibName:@"TheMapViewController" bundle:nil];
         self.mapViewController.theTabRootViewController = self;
-        self.viewControllers = @[youViewController, mapViewController];
+//        self.viewControllers = @[youViewController, mapViewController];
+            
+        self.viewControllers = @[self.youViewController, self.mapViewController, self.inventoryViewController, self.trophyViewController];
+
     }
     return self;
 }
