@@ -19,6 +19,7 @@
 }
 
 -(void)touchMovedWithXPos:(float)xPos;
+-(IBAction)shareButtonHit;
 
 @property (nonatomic, retain) IBOutlet UILabel *howLabel;
 @property (nonatomic, retain) IBOutlet IndexTouchView *indexTouchView;

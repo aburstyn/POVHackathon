@@ -7,6 +7,7 @@
 //
 
 #import "VulerabilityViewController.h"
+#import "FinishedViewController.h"
 
 @interface VulerabilityViewController ()
 
@@ -51,10 +52,10 @@
         self.indexBarView.frame = newFrame;
     
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+-(IBAction)shareButtonHit
+{
+    FinishedViewController *finishedViewController = [[FinishedViewController alloc] initWithNibName:@"FinishedViewController" bundle:nil];
+    [self.view addSubview:finishedViewController.view];
+}
 @end
