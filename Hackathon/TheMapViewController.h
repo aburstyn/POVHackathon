@@ -40,6 +40,16 @@
     
     
     BOOL allowAction;
+    
+    UIView *infoBackgroundView;
+    
+    UILabel *infoLabel;
+    
+    int infoIter;
+    
+    NSMutableArray *infoArray;
+    
+    
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
@@ -68,4 +78,13 @@
 @property (nonatomic, retain) UIButton *startButton;
 
 @property (nonatomic, assign) BOOL allowAction;
+
+@property (nonatomic, retain) IBOutlet UIView *infoBackgroundView;
+
+@property (nonatomic, retain) UILabel *infoLabel;
+
+@property (nonatomic, assign) int infoIter;
+
+@property (nonatomic, retain) NSMutableArray *infoArray;
+
 @end

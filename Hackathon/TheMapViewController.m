@@ -17,7 +17,7 @@
 
 @implementation TheMapViewController
 
-@synthesize mapView, pinObjectsArray, tripDistance, theTabRootViewController, distanceLabel, startButton;
+@synthesize mapView, pinObjectsArray, tripDistance, theTabRootViewController, distanceLabel, startButton, infoBackgroundView;
 
 @synthesize hasStartedTrip;
 @synthesize hasTripEnded;
@@ -33,6 +33,10 @@
 
 @synthesize allowAction;
 
+@synthesize infoLabel;
+@synthesize infoIter;
+
+@synthesize infoArray;
 static float desiredRange = 18;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,6 +47,15 @@ static float desiredRange = 18;
         
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"map_icon.png"] tag:0];
         
+        
+        self.infoArray = [[NSMutableArray alloc] initWithCapacity:0];        
+        [self.infoArray addObject:@"Total number of homeless people in municipal shelters: 50,135"];
+        [self.infoArray addObject:@"Number of homeless families: 11,984"];
+        [self.infoArray addObject:@"Number of homeless children: 21,034"];
+        [self.infoArray addObject:@"Number of homeless adults in families: 18,261"];
+        [self.infoArray addObject:@"Number of homeless single adults: 10,840"];
+        [self.infoArray addObject:@"Number of homeless single men:  8,082"];
+        [self.infoArray addObject:@"Number of homeless single women: 2,758"];
         
     }
     return self;
@@ -89,11 +102,15 @@ static float desiredRange = 18;
     NSLog(@"slider.subviews: %@", [self.progressSlider subviews]);
     
     self.mapView.delegate = self;
+    
+    
+    NSTimer *theTimer = [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(infoTimerFired) userInfo:nil repeats:YES];
+    [theTimer fire];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"didUpdateToLocation: %d", self.allowAction);
+//    NSLog(@"didUpdateToLocation: %d", self.allowAction);
     if (!self.hasTripEnded)
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate];
@@ -278,6 +295,58 @@ static float desiredRange = 18;
     }
     
     return nil;
+    
+}
+
+-(void)createAndShowInfoLabel
+{
+    float infoInset = 15;
+    
+    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.infoBackgroundView.frame.origin.x + infoInset, self.infoBackgroundView.frame.origin.y - self.infoBackgroundView.frame.size.height, self.infoBackgroundView.frame.size.width - infoInset, self.infoBackgroundView.frame.size.height)];
+    self.infoLabel.numberOfLines = 0;
+    self.infoLabel.backgroundColor = [UIColor clearColor];
+    self.infoLabel.textColor = [UIColor whiteColor];
+    self.infoLabel.text = [self.infoArray objectAtIndex:infoIter];
+    self.infoLabel.textAlignment = NSTextAlignmentLeft;
+    self.infoLabel.font = [UIFont fontWithName:@"SignPainter" size:self.infoLabel.frame.size.height - 20];
+    [self.view addSubview:self.infoLabel];
+    
+    
+    [UIView beginAnimations:@"AnimateIn" context:nil];
+    [UIView setAnimationDuration:.5];
+    self.infoLabel.frame = CGRectMake(self.infoLabel.frame.origin.x, self.infoBackgroundView.frame.origin.y, self.infoLabel.frame.size.width, self.infoLabel.frame.size.height);
+    [UIView commitAnimations];
+    
+    self.infoIter++;
+    if (self.infoIter == [self.infoArray count])
+        self.infoIter = 0;
+   
+}
+-(void)infoTimerFired
+{
+    if (self.infoLabel == nil)
+    {
+        [self createAndShowInfoLabel];
+    }
+    else
+    {
+        [UIView beginAnimations:@"AnimateOut" context:nil];
+        [UIView setAnimationDuration:.5];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(infoLabelDidHide)];
+        self.infoLabel.alpha = 0;
+        [UIView commitAnimations];
+    }
+
+}
+-(void)infoLabelDidHide
+{
+    [self.infoLabel removeFromSuperview];
+    [self.infoLabel release];
+    self.infoLabel = nil;
+    
+    [self createAndShowInfoLabel];
+    
     
 }
 - (void)didReceiveMemoryWarning
