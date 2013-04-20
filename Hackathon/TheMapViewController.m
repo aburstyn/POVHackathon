@@ -23,22 +23,19 @@
 @synthesize hasTripEnded;
 @synthesize hasPresentedFirstConnect;
 @synthesize goToOverlayImageView;
-
 @synthesize progressBackgroundImageView;
 @synthesize progressSlider;
-
 @synthesize holdDistance;
-
 @synthesize startInterstatialImageView;
-
 @synthesize allowAction;
-
 @synthesize infoLabel;
 @synthesize infoIter;
-
 @synthesize infoArray;
-static float desiredRange = 18;
+@synthesize timerBackgroundView;
+@synthesize timerLabel;
+@synthesize timeElapsed;
 
+static float desiredRange = 18;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -157,6 +154,30 @@ static float desiredRange = 18;
                     */
                     self.tripDistance = nil;
                     
+                    self.timerBackgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(self.progressBackgroundImageView.frame.origin.x, self.progressBackgroundImageView.frame.origin.y - self.progressBackgroundImageView.frame.size.height, self.progressBackgroundImageView.frame.size.width, self.progressBackgroundImageView.frame.size.height)];
+                    self.timerBackgroundView.image = self.progressBackgroundImageView.image;                
+                    [self.view addSubview:self.timerBackgroundView];
+                    self.timerBackgroundView.alpha = 0;
+                    
+                    self.timerLabel = [[UILabel alloc] initWithFrame:self.timerBackgroundView.frame];
+                    self.timerLabel.backgroundColor = [UIColor clearColor];
+                    self.timerLabel.textColor = [UIColor whiteColor];
+                    self.timerLabel.textAlignment = NSTextAlignmentCenter;
+                    [self.view addSubview:self.timerLabel];
+                    self.timerLabel.alpha = 0;
+                    
+                    [UIView beginAnimations:nil context:nil];
+                    [UIView setAnimationDuration:.75];
+                    self.timerBackgroundView.alpha = 1;
+                    self.timerLabel.alpha = 1;
+                    [UIView commitAnimations];
+                
+                    NSLog(@"timerBackgroundView: %@", self.timerBackgroundView);
+                    NSLog(@"timerLabel: %@", self.timerLabel);
+                    
+                    NSTimer *theTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeTimerFired) userInfo:nil repeats:YES];
+                    [theTimer fire];
+                    
                 }
                 
                 self.iterationDistance = [NSNumber numberWithFloat:distanceInmeters / [questObject.questObjects count]];
@@ -180,7 +201,6 @@ static float desiredRange = 18;
                     self.tripDistance = [NSNumber numberWithFloat:distanceInmeters];
                
                 NSString *theQuestObjectString = [questObject.questObjects objectAtIndex:0];
-                NSLog(@"theQuestObjectString");
                 if (![questObject.receivedQuestObjects containsObject:theQuestObjectString])
                 {
                     [questObject.receivedQuestObjects addObject:theQuestObjectString];
@@ -347,6 +367,20 @@ static float desiredRange = 18;
     
     [self createAndShowInfoLabel];
     
+    
+}
+
+-(void)timeTimerFired
+{
+    self.timeElapsed++;
+    
+    NSString *timeLabelText = nil;
+    if (self.timeElapsed < 10)
+        timeLabelText = [NSString stringWithFormat:@"00:0%d", self.timeElapsed];
+    else if (self.timeElapsed < 60)
+        timeLabelText = [NSString stringWithFormat:@"00:%d", self.timeElapsed];
+    
+    self.timerLabel.text = timeLabelText;
     
 }
 - (void)didReceiveMemoryWarning

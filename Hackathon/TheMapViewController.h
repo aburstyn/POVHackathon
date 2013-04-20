@@ -49,6 +49,10 @@
     
     NSMutableArray *infoArray;
     
+    UIImageView *timerBackgroundView;
+    UILabel *timerLabel;
+    int timeElapsed;
+    
     
 }
 
@@ -86,5 +90,9 @@
 @property (nonatomic, assign) int infoIter;
 
 @property (nonatomic, retain) NSMutableArray *infoArray;
+
+@property (nonatomic, retain) UIImageView *timerBackgroundView;
+@property (nonatomic, retain) UILabel *timerLabel;
+@property (nonatomic, assign) int timeElapsed;
 
 @end
