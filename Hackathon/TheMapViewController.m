@@ -31,7 +31,8 @@
 
 @synthesize startInterstatialImageView;
 
-static float sentinalValue = 1800000; // 18
+@synthesize allowAction;
+
 static float desiredRange = 18;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,7 +51,10 @@ static float desiredRange = 18;
 
 -(void)simulateButtonHit
 {
-    self.holdDistance = sentinalValue;
+    NSLog(@"simulateButtonHit!");
+//    self.holdDistance = sentinalValue;
+    
+    self.allowAction = YES;
 }
 
 
@@ -89,12 +93,7 @@ static float desiredRange = 18;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    
-    
-    NSLog(@"self.holdDistance: %f", self.holdDistance);
-    NSLog(@"self.hasStartedTrip: %d", self.hasStartedTrip);
-    NSLog(@"self.hasTripEnded: %d", self.hasTripEnded);
-            
+    NSLog(@"didUpdateToLocation: %d", self.allowAction);
     if (!self.hasTripEnded)
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate];
@@ -127,28 +126,19 @@ static float desiredRange = 18;
                 
                 self.distanceLabel.text = [NSString stringWithFormat:@"%f", distanceInmeters];
                 
-                NSLog(@"distance to start: %f", distanceInmeters);
-                NSLog(@"self.tripDistance: %@", self.tripDistance);
-                NSLog(@" ");
-                
-                if (distanceInmeters < holdDistance)
+                if (distanceInmeters < holdDistance || self.allowAction)
                 {
                     self.hasStartedTrip = YES;
                     
-                    NSLog(@"herehereherehereherehereherehereherehereherehereherehereherehere");
+
+                    [self journeyBegan];
                     
-                    self.startInterstatialImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height)];
-                    self.startInterstatialImageView.image = [UIImage imageNamed:@"locationscreen.png"];
-                    [self.view addSubview:self.startInterstatialImageView];
-                    
-                    self.startButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+                    /*self.startButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
                     self.startButton.frame = CGRectMake(0,0,520, 300);
                     [self.startButton addTarget:self action:@selector(journeyBegan) forControlEvents:UIControlEventTouchUpInside];
                     [self.view addSubview:self.startButton];
-                    
+                    */
                     self.tripDistance = nil;
-                    
-//                    [self journeyBegan];
                     
                 }
                 
@@ -223,7 +213,7 @@ static float desiredRange = 18;
                  
                 }
                  */
-                if (distanceInmeters < holdDistance + 25)
+                if (distanceInmeters < holdDistance + 25 || self.allowAction)
                 {
                     
                     [self.theTabRootViewController journeyCompleted];                    
@@ -242,8 +232,7 @@ static float desiredRange = 18;
     }
 
     
-    if (self.holdDistance == sentinalValue)
-        self.holdDistance = desiredRange;
+    self.allowAction = NO;
 }
 
 -(void)journeyBegan

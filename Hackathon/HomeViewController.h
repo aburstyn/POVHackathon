@@ -12,6 +12,9 @@
 #import "TakePhotoViewController.h"
 #import "MediaPlayerViewController.h"
 #import "SetupViewController.h"
+
+#import <MapKit/MapKit.h>
+
 @interface HomeViewController : UIViewController
 {
     SplashViewController *splashViewController;
@@ -20,6 +23,10 @@
     MediaPlayerViewController *mediaPlayerViewController;
     
     SetupViewController *setupViewController;
+    
+    UIView *holdingView;
+    UIActivityIndicatorView *holdingActivityIndicator;
+    
 }
 
 
@@ -28,7 +35,7 @@
 -(void)splashViewComplete;
 -(void)loginViewComplete;
 -(void)takePhotoViewComplete;
-
+-(void)setupViewComplete;
 
 @property (nonatomic, retain) SplashViewController *splashViewController;
 @property (nonatomic, retain) LoginViewController *loginViewController;
@@ -36,4 +43,7 @@
 @property (nonatomic, retain) MediaPlayerViewController *mediaPlayerViewController;
 
 @property (nonatomic, retain) SetupViewController *setupViewController;
+
+@property (nonatomic, retain) UIView *holdingView;
+@property (nonatomic, retain) UIActivityIndicatorView *holdingActivityIndicator;
 @end

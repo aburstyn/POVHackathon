@@ -9,13 +9,14 @@
 #import "SetupViewController.h"
 #import "AppDelegate.h"
 #import "UserProfileObject.h"
+#import "HomeViewController.h"
 @interface SetupViewController ()
 
 @end
 
 @implementation SetupViewController
 
-@synthesize uip, backgroundImageView, textLabel, photoImageView;
+@synthesize uip, backgroundImageView, textLabel, photoImageView, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +29,6 @@
 
 -(IBAction)takePhotoButtonHit
 {
-    NSLog(@"takePhotoButtonHit");
-    
-    
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] && self.uip == nil)
     {
         self.uip = [[UIImagePickerController alloc] init];
@@ -66,6 +64,20 @@
     self.textLabel.textColor = [UIColor whiteColor];
     self.textLabel.font = [UIFont fontWithName:@"SignPainter" size:20];
     self.textLabel.text = @"Tap to Take a Photo of yourself";
+    
+    
+    
+    UIImage *useImage = [UIImage imageNamed:@"use_button.png"];
+    
+    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [nextButton setImage:useImage forState:UIControlStateNormal];
+    [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
+    nextButton.frame = CGRectMake(self.view.frame.size.width  - useImage.size.width, self.view.frame.size.height - 20 - useImage.size.height, useImage.size.width, useImage.size.height);
+    [self.view addSubview:nextButton];
+    
+
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -77,14 +89,6 @@
     self.textLabel.text = @"Tap to retake photo";
     
     self.photoImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-
-
-
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [nextButton setImage:[UIImage imageNamed:@"use_button.png"] forState:UIControlStateNormal];
-    [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
-    nextButton.frame = CGRectMake(420,240,100,50);
-    [self.view addSubview:nextButton];
 
     
     [UIView beginAnimations:nil context:nil];
@@ -106,9 +110,8 @@
 }
 -(void)nextButtonHit
 {
+    [self.delegate setupViewComplete];
     
-    AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [del transitionToRootTabBar];
 }
 
 - (void)didReceiveMemoryWarning

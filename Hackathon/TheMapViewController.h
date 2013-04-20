@@ -38,6 +38,8 @@
     UIImageView *startInterstatialImageView;
     UIButton *startButton;
     
+    
+    BOOL allowAction;
 }
 
 -(void)foundAcceptButtonHit:(FoundItemViewController *)vc;
@@ -64,4 +66,6 @@
 
 @property (nonatomic, retain) UIImageView *startInterstatialImageView;
 @property (nonatomic, retain) UIButton *startButton;
+
+@property (nonatomic, assign) BOOL allowAction;
 @end

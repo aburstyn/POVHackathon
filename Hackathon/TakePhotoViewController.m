@@ -36,6 +36,12 @@
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePhotoButtonHit)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
+    
+
+      
+    NSLog(@"next button");
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -72,13 +78,6 @@
     
     self.photoImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     
-    CGRect frame = self.theButton.frame;
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [nextButton setTitle:@"Next" forState:UIControlStateNormal];
-    [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
-    nextButton.frame = frame;
-    [self.theButton removeFromSuperview];
-    [self.view addSubview:nextButton];
 
  
     [UIView beginAnimations:nil context:nil];

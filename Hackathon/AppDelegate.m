@@ -29,7 +29,7 @@
 
     
     self.positionTracker = [[PositionTracker alloc] init];
-    [self.positionTracker beginTrackingLocation];
+//    [self.positionTracker beginTrackingLocation];
         
 //    [self transitionToRootTabBar];
     return YES;

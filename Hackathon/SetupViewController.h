@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class HomeViewController;
+
 @interface SetupViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     UIImageView *backgroundImageView;
@@ -16,6 +19,8 @@
     
     UIImageView *photoImageView;
     UILabel *textLabel;
+
+    HomeViewController *delegate;
     
 }
 
@@ -27,4 +32,7 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, retain) IBOutlet UILabel *textLabel;
+
+@property (nonatomic, retain) HomeViewController *delegate;
+
 @end
