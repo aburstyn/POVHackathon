@@ -72,7 +72,7 @@
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [nextButton setImage:useImage forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(nextButtonHit) forControlEvents:UIControlEventTouchUpInside];
-    nextButton.frame = CGRectMake(self.view.frame.size.width  - useImage.size.width, self.view.frame.size.height - 20 - useImage.size.height, useImage.size.width, useImage.size.height);
+    nextButton.frame = CGRectMake(self.view.frame.size.width  - useImage.size.width - 40, self.view.frame.size.height - 20 - useImage.size.height, useImage.size.width, useImage.size.height);
     [self.view addSubview:nextButton];
     
 
