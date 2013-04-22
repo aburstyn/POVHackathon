@@ -130,4 +130,11 @@ static HomeViewController *theSharedHomeViewController;
     [del transitionToRootTabBar];
 }
 
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+}
+
+
 @end

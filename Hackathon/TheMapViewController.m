@@ -107,7 +107,7 @@ static float desiredRange = 18;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-//    NSLog(@"didUpdateToLocation: %d", self.allowAction);
+    NSLog(@"didUpdateToLocation: %d", self.allowAction);
     if (!self.hasTripEnded)
     {
         [self.mapView setCenterCoordinate:newLocation.coordinate];
@@ -322,7 +322,7 @@ static float desiredRange = 18;
 {
     float infoInset = 15;
     
-    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.infoBackgroundView.frame.origin.x + infoInset, self.infoBackgroundView.frame.origin.y - self.infoBackgroundView.frame.size.height, self.infoBackgroundView.frame.size.width - infoInset, self.infoBackgroundView.frame.size.height)];
+    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.infoBackgroundView.frame.origin.x + 5, self.infoBackgroundView.frame.origin.y - self.infoBackgroundView.frame.size.height, self.infoBackgroundView.frame.size.width - infoInset * 3, self.infoBackgroundView.frame.size.height)];
     self.infoLabel.numberOfLines = 0;
     self.infoLabel.backgroundColor = [UIColor clearColor];
     self.infoLabel.textColor = [UIColor whiteColor];

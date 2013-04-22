@@ -42,7 +42,7 @@
         [self.view addSubview:self.uip.view];
         
         self.uip.view.transform = CGAffineTransformMakeRotation(-3.141592/2);
-        self.uip.view.frame = CGRectMake(+560,-5,580,310);
+        self.uip.view.frame = CGRectMake(+480,-5,480,310);
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:.35];
@@ -113,6 +113,14 @@
     [self.delegate setupViewComplete];
     
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    NSLog(@"shouldAutorotateToInterfaceOrientation: %@", self);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
